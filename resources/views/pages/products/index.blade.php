@@ -23,12 +23,12 @@
 </section>
 
 <!-- Filters & Search Toolbar -->
-<section class="bg-white border-b border-slate-200 sticky top-20 z-30 shadow-sm py-4">
+<section class="bg-white border-b border-slate-200 sticky top-16 sm:top-20 z-30 shadow-sm py-3 sm:py-4">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
             
             <!-- Category Pills -->
-            <div class="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0 scrollbar-none">
+            <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
                 <a href="{{ route('menu', ['category' => 'all']) }}"
                    class="px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition {{ $category === 'all' ? 'bg-forest-900 text-gold-400 shadow-sm' : 'bg-slate-100 text-slate-700 hover:bg-slate-200' }}">
                     All Items ({{ $totalCount }})
@@ -52,10 +52,10 @@
                 <input type="hidden" name="category" value="{{ $category }}">
                 <input type="text" name="search" value="{{ $search ?? '' }}"
                        placeholder="Search flavor or size..."
-                       class="w-full pl-9 pr-4 py-2 text-xs rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-forest-600 focus:bg-white transition">
-                <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
+                       class="w-full pl-9 pr-4 py-2.5 text-base sm:text-xs rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-forest-600 focus:bg-white transition">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-3.5 text-slate-400 text-xs"></i>
                 @if($search)
-                    <a href="{{ route('menu', ['category' => $category]) }}" class="absolute right-3 top-2.5 text-slate-400 hover:text-slate-600 text-xs">
+                    <a href="{{ route('menu', ['category' => $category]) }}" class="absolute right-3 top-3 text-slate-400 hover:text-slate-600 text-xs">
                         <i class="fa-solid fa-xmark"></i>
                     </a>
                 @endif
@@ -190,11 +190,11 @@
             <h3 class="font-heading font-bold text-xl text-white">Need a Custom Order or Cafe Distribution?</h3>
             <p class="text-xs sm:text-sm text-slate-300 mt-1">We customize flavor proportions, pack sizes, and franchise schedules.</p>
         </div>
-        <div class="flex items-center gap-3">
-            <a href="{{ route('order') }}" class="px-5 py-3 rounded-xl bg-gold-500 hover:bg-gold-400 text-forest-900 font-heading font-bold text-xs uppercase tracking-wider transition">
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
+            <a href="{{ route('order') }}" class="px-5 py-3 rounded-xl bg-gold-500 hover:bg-gold-400 text-forest-900 font-heading font-bold text-xs uppercase tracking-wider text-center transition">
                 Open Order Builder
             </a>
-            <a href="https://wa.me/919818192575" target="_blank" class="px-5 py-3 rounded-xl bg-forest-800 hover:bg-forest-700 text-white font-bold text-xs border border-forest-700 transition flex items-center gap-1.5">
+            <a href="https://wa.me/919818192575" target="_blank" class="px-5 py-3 rounded-xl bg-forest-800 hover:bg-forest-700 text-white font-bold text-xs border border-forest-700 transition flex items-center justify-center gap-1.5">
                 <i class="fa-brands fa-whatsapp text-green-400"></i> WhatsApp Help
             </a>
         </div>

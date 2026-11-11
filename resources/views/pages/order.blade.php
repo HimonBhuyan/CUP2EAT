@@ -140,14 +140,14 @@
                                 <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Customer / Cafe Name *</label>
                                 <input type="text" name="customer_name" required value="{{ old('customer_name') }}"
                                        placeholder="e.g. Varun Khera / Artisan Roastery"
-                                       class="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-sm focus:outline-none focus:border-forest-600">
+                                       class="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-base sm:text-sm focus:outline-none focus:border-forest-600">
                             </div>
 
                             <div>
                                 <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">WhatsApp / Phone Number *</label>
                                 <input type="text" name="phone" required value="{{ old('phone') }}"
                                        placeholder="e.g. 9818192575"
-                                       class="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-sm focus:outline-none focus:border-forest-600">
+                                       class="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-base sm:text-sm focus:outline-none focus:border-forest-600">
                             </div>
                         </div>
 
@@ -156,12 +156,12 @@
                                 <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Delivery City & State *</label>
                                 <input type="text" name="city" required value="{{ old('city') }}"
                                        placeholder="e.g. Mumbai, Maharashtra"
-                                       class="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-sm focus:outline-none focus:border-forest-600">
+                                       class="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-base sm:text-sm focus:outline-none focus:border-forest-600">
                             </div>
 
                             <div>
                                 <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Usage Purpose</label>
-                                <select name="business_type" class="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-sm focus:outline-none focus:border-forest-600">
+                                <select name="business_type" class="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-base sm:text-sm focus:outline-none focus:border-forest-600">
                                     <option value="Cafe / Restaurant Regular Supply">Cafe / Restaurant Regular Supply</option>
                                     <option value="Event Catering / Wedding Party">Event Catering / Wedding Party</option>
                                     <option value="Corporate / IT Office Cafeteria">Corporate / IT Office Cafeteria</option>
@@ -174,14 +174,14 @@
                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Email Address (Optional)</label>
                             <input type="email" name="email" value="{{ old('email') }}"
                                    placeholder="e.g. contact@business.com"
-                                   class="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-sm focus:outline-none focus:border-forest-600">
+                                   class="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-base sm:text-sm focus:outline-none focus:border-forest-600">
                         </div>
 
                         <div>
                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Special Delivery Notes</label>
                             <textarea name="notes" rows="2"
                                       placeholder="Any specific delivery date, packing preference or instructions..."
-                                      class="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-sm focus:outline-none focus:border-forest-600">{{ old('notes') }}</textarea>
+                                      class="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-base sm:text-sm focus:outline-none focus:border-forest-600">{{ old('notes') }}</textarea>
                         </div>
                     </div>
 
@@ -266,6 +266,29 @@
 
                 </div>
 
+            </div>
+
+            <!-- Mobile Sticky Bottom Quote Bar (Visible only on mobile when items are selected) -->
+            <div x-show="selectedItems.length > 0"
+                 x-cloak
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="translate-y-full opacity-0"
+                 x-transition:enter-end="translate-y-0 opacity-100"
+                 x-transition:leave="transition ease-in duration-200"
+                 x-transition:leave-start="translate-y-0 opacity-100"
+                 x-transition:leave-end="translate-y-full opacity-0"
+                 class="lg:hidden fixed bottom-3 left-3 right-3 z-30 bg-forest-900/95 backdrop-blur-md border border-gold-500/50 p-3 rounded-2xl shadow-2xl flex items-center justify-between gap-3 text-white">
+                <div class="min-w-0">
+                    <div class="text-[11px] text-gold-300/90 font-medium truncate">
+                        <span x-text="totalCups.toLocaleString()"></span> cups selected
+                    </div>
+                    <div class="font-heading font-black text-lg text-gold-400" x-text="'₹' + subtotal.toLocaleString()"></div>
+                </div>
+                <button type="submit"
+                        class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-500 text-forest-900 font-heading font-black text-xs uppercase tracking-wider shadow-md shrink-0 flex items-center gap-1.5 hover:scale-105 transition">
+                    <span>WhatsApp Quote</span>
+                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                </button>
             </div>
         </form>
 

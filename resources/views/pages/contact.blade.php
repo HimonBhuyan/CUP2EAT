@@ -125,14 +125,14 @@
                                 <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Your Name *</label>
                                 <input type="text" name="name" required value="{{ old('name') }}"
                                        placeholder="e.g. Varun Khera"
-                                       class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-forest-600 focus:bg-white">
+                                       class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-base sm:text-sm focus:outline-none focus:border-forest-600 focus:bg-white">
                             </div>
 
                             <div>
                                 <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Phone / WhatsApp *</label>
                                 <input type="text" name="phone" required value="{{ old('phone') }}"
                                        placeholder="e.g. 9818192575"
-                                       class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-forest-600 focus:bg-white">
+                                       class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-base sm:text-sm focus:outline-none focus:border-forest-600 focus:bg-white">
                             </div>
                         </div>
 
@@ -141,14 +141,14 @@
                                 <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Email Address</label>
                                 <input type="email" name="email" value="{{ old('email') }}"
                                        placeholder="e.g. varun@example.com"
-                                       class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-forest-600 focus:bg-white">
+                                       class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-base sm:text-sm focus:outline-none focus:border-forest-600 focus:bg-white">
                             </div>
 
                             <div>
                                 <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">City</label>
                                 <input type="text" name="city" value="{{ old('city') }}"
                                        placeholder="e.g. Delhi NCR, Mumbai, Ahmedabad"
-                                       class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-forest-600 focus:bg-white">
+                                       class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-base sm:text-sm focus:outline-none focus:border-forest-600 focus:bg-white">
                             </div>
                         </div>
 
@@ -156,14 +156,14 @@
                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Subject</label>
                             <input type="text" name="subject" value="{{ old('subject') }}"
                                    placeholder="e.g. Sample box inquiry, Franchise distributorship, Custom branding"
-                                   class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-forest-600 focus:bg-white">
+                                   class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-base sm:text-sm focus:outline-none focus:border-forest-600 focus:bg-white">
                         </div>
 
                         <div>
                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Your Message *</label>
                             <textarea name="message" rows="5" required
                                       placeholder="Tell us what you are looking for..."
-                                      class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-forest-600 focus:bg-white">{{ old('message') }}</textarea>
+                                      class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-base sm:text-sm focus:outline-none focus:border-forest-600 focus:bg-white">{{ old('message') }}</textarea>
                         </div>
 
                         <button type="submit"

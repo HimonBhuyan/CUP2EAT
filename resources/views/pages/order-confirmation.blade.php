@@ -43,7 +43,7 @@
             @endif
 
             <!-- Customer & Delivery Summary -->
-            <div class="grid grid-cols-2 gap-4 text-xs bg-slate-50 p-5 rounded-2xl border border-slate-200">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs bg-slate-50 p-5 rounded-2xl border border-slate-200">
                 <div>
                     <span class="text-slate-400 block uppercase font-bold text-[10px]">Customer Name</span>
                     <span class="font-bold text-forest-900 text-sm">{{ $quote->customer_name }}</span>
@@ -69,7 +69,7 @@
                 </h3>
                 
                 <div class="overflow-x-auto border border-slate-200 rounded-2xl">
-                    <table class="w-full text-left text-xs text-slate-700">
+                    <table class="w-full min-w-[500px] text-left text-xs text-slate-700">
                         <thead class="bg-slate-50 text-slate-500 uppercase text-[10px] font-bold border-b border-slate-200">
                             <tr>
                                 <th class="py-3 px-4">Item</th>
@@ -110,7 +110,7 @@
             @endif
 
             <!-- Navigation Actions -->
-            <div class="pt-4 flex items-center justify-between border-t border-slate-200 text-xs">
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-slate-200 text-xs">
                 <a href="{{ route('menu') }}" class="text-slate-600 hover:text-forest-900 font-bold flex items-center gap-1">
                     <i class="fa-solid fa-arrow-left"></i> Return to Menu
                 </a>

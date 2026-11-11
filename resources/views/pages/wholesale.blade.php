@@ -292,14 +292,14 @@
                         <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Your Name *</label>
                         <input type="text" name="name" required value="{{ old('name') }}"
                                placeholder="e.g. Varun Malhotra"
-                               class="w-full px-4 py-3 rounded-xl bg-forest-800 border border-forest-700 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 text-sm">
+                               class="w-full px-4 py-3 rounded-xl bg-forest-800 border border-forest-700 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 text-base sm:text-sm">
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">WhatsApp / Phone Number *</label>
                         <input type="text" name="phone" required value="{{ old('phone') }}"
                                placeholder="e.g. 9818192575"
-                               class="w-full px-4 py-3 rounded-xl bg-forest-800 border border-forest-700 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 text-sm">
+                               class="w-full px-4 py-3 rounded-xl bg-forest-800 border border-forest-700 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 text-base sm:text-sm">
                     </div>
                 </div>
 
@@ -308,12 +308,12 @@
                         <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">City & State *</label>
                         <input type="text" name="city" required value="{{ old('city') }}"
                                placeholder="e.g. Mumbai, Maharashtra"
-                               class="w-full px-4 py-3 rounded-xl bg-forest-800 border border-forest-700 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 text-sm">
+                               class="w-full px-4 py-3 rounded-xl bg-forest-800 border border-forest-700 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 text-base sm:text-sm">
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Business Type *</label>
-                        <select name="business_type" required class="w-full px-4 py-3 rounded-xl bg-forest-800 border border-forest-700 text-white focus:outline-none focus:border-gold-500 text-sm">
+                        <select name="business_type" required class="w-full px-4 py-3 rounded-xl bg-forest-800 border border-forest-700 text-white focus:outline-none focus:border-gold-500 text-base sm:text-sm">
                             <option value="Cafe / Restaurant">Cafe / Restaurant / Coffee Shop</option>
                             <option value="Tea Stall / Kiosk">Tea Stall / Cutting Chai Kiosk</option>
                             <option value="Event Catering / Wedding">Event Catering / Wedding Planner</option>
@@ -327,7 +327,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Estimated Monthly Volume *</label>
-                        <select name="volume_needed" required class="w-full px-4 py-3 rounded-xl bg-forest-800 border border-forest-700 text-white focus:outline-none focus:border-gold-500 text-sm">
+                        <select name="volume_needed" required class="w-full px-4 py-3 rounded-xl bg-forest-800 border border-forest-700 text-white focus:outline-none focus:border-gold-500 text-base sm:text-sm">
                             <option value="Sample Box Only (Trial)">Sample Box Only (Trial)</option>
                             <option value="1 - 3 Cartons (400 - 1,200 cups/month)">1 - 3 Cartons (400 - 1,200 cups/month)</option>
                             <option value="5 - 10 Cartons (2,000 - 4,000 cups/month)">5 - 10 Cartons (2,000 - 4,000 cups/month)</option>
@@ -339,7 +339,7 @@
                         <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Preferred Flavours</label>
                         <input type="text" name="flavor_interest" value="{{ old('flavor_interest') }}"
                                placeholder="e.g. Chocolate Coated, Elaichi, Vanilla"
-                               class="w-full px-4 py-3 rounded-xl bg-forest-800 border border-forest-700 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 text-sm">
+                               class="w-full px-4 py-3 rounded-xl bg-forest-800 border border-forest-700 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 text-base sm:text-sm">
                     </div>
                 </div>
 
@@ -347,14 +347,14 @@
                     <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Email Address (Optional)</label>
                     <input type="email" name="email" value="{{ old('email') }}"
                            placeholder="e.g. cafe@domain.com"
-                           class="w-full px-4 py-3 rounded-xl bg-forest-800 border border-forest-700 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 text-sm">
+                           class="w-full px-4 py-3 rounded-xl bg-forest-800 border border-forest-700 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 text-base sm:text-sm">
                 </div>
 
                 <div>
                     <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Any Specific Question or Delivery Requirement</label>
                     <textarea name="message" rows="3"
                               placeholder="Tell us about your cafe, upcoming events, or questions regarding heat resistance and shelf life..."
-                              class="w-full px-4 py-3 rounded-xl bg-forest-800 border border-forest-700 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 text-sm">{{ old('message') }}</textarea>
+                              class="w-full px-4 py-3 rounded-xl bg-forest-800 border border-forest-700 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 text-base sm:text-sm">{{ old('message') }}</textarea>
                 </div>
 
                 <div class="flex items-center gap-3 bg-forest-800/80 p-4 rounded-xl border border-forest-700">

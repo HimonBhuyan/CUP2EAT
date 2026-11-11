@@ -144,25 +144,36 @@
 
     @stack('styles')
 </head>
-<body x-data="globalApp()" class="bg-[#FAF7F2] text-slate-800 font-sans antialiased selection:bg-gold-500 selection:text-white flex flex-col min-h-screen">
+<body x-data="globalApp()" class="bg-[#FAF7F2] text-slate-800 font-sans antialiased selection:bg-gold-500 selection:text-white flex flex-col min-h-screen overflow-x-hidden">
 
-    <!-- Announcement Bar -->
-    <div class="bg-forest-900 text-gold-300 text-xs sm:text-sm py-2 px-4 border-b border-forest-700/60">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <!-- Announcement Bar (Responsive across all screens) -->
+    <div class="bg-forest-900 text-gold-300 text-xs sm:text-sm py-2 px-3 sm:px-4 border-b border-forest-700/60">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-2">
             <div class="flex items-center gap-2 overflow-hidden text-ellipsis whitespace-nowrap">
-                <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-gold-500 text-forest-900 uppercase tracking-wider">Zero Waste</span>
+                <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-gold-500 text-forest-900 uppercase tracking-wider shrink-0">Zero Waste</span>
                 <span class="hidden sm:inline">🌱 Revolutionizing The Way You Drink:</span>
-                <span class="font-medium text-white">Eat Your Drink! 100% Edible Cups</span>
+                <span class="font-medium text-white truncate">Eat Your Drink! 100% Edible Cups</span>
                 <span class="hidden md:inline text-forest-400">|</span>
                 <span class="hidden md:inline">🚚 Pan-India Delivery (Odisha, Mumbai, Ahmedabad, Gurugram & more)</span>
             </div>
-            <div class="flex items-center gap-4 text-xs font-semibold shrink-0">
+            <!-- Desktop Contact -->
+            <div class="hidden sm:flex items-center gap-4 text-xs font-semibold shrink-0">
                 <a href="tel:+919818192575" class="hover:text-white transition flex items-center gap-1.5">
                     <i class="fa-solid fa-phone text-gold-400"></i> +91 98181 92575
                 </a>
                 <span class="text-forest-600">|</span>
                 <a href="https://instagram.com/cup2eat" target="_blank" class="hover:text-white transition flex items-center gap-1">
                     <i class="fa-brands fa-instagram text-pink-400"></i> @cup2eat
+                </a>
+            </div>
+            <!-- Mobile Compact Contact -->
+            <div class="sm:hidden flex items-center gap-2 text-[11px] font-semibold shrink-0">
+                <a href="tel:+919818192575" class="text-gold-300 hover:text-white flex items-center gap-1">
+                    <i class="fa-solid fa-phone text-gold-400 text-[10px]"></i> 9818192575
+                </a>
+                <span class="text-forest-600">|</span>
+                <a href="https://instagram.com/cup2eat" target="_blank" class="text-pink-400 hover:text-white flex items-center">
+                    <i class="fa-brands fa-instagram text-xs"></i>
                 </a>
             </div>
         </div>
@@ -276,23 +287,50 @@
              x-transition:leave="transition ease-in duration-150"
              x-transition:leave-start="opacity-100 translate-y-0"
              x-transition:leave-end="opacity-0 -translate-y-2"
-             class="lg:hidden bg-forest-900 border-b border-forest-700 px-4 pt-3 pb-6 space-y-2">
-            <a href="{{ route('home') }}" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-forest-800">Home</a>
-            <a href="{{ route('menu') }}" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-forest-800">Flavors & Menu</a>
-            <a href="{{ route('wholesale') }}" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-forest-800">Wholesale & Cafe Supply</a>
-            <a href="{{ route('about') }}" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-forest-800">Our Story & Mission</a>
-            <a href="{{ route('order') }}" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-forest-800">Custom Order Builder</a>
-            <a href="{{ route('contact') }}" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-forest-800">Contact Us</a>
+             class="lg:hidden bg-forest-900 border-b border-forest-700 px-4 pt-3 pb-6 space-y-1.5 max-h-[calc(100vh-80px)] overflow-y-auto">
+            <a href="{{ route('home') }}"
+               class="flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-semibold transition {{ request()->routeIs('home') ? 'bg-forest-800 text-gold-400 font-bold border-l-4 border-gold-500 shadow-sm' : 'text-slate-200 hover:bg-forest-800 hover:text-white' }}">
+                <i class="fa-solid fa-house w-5 text-center {{ request()->routeIs('home') ? 'text-gold-400' : 'text-slate-400' }}"></i>
+                <span>Home</span>
+            </a>
+            <a href="{{ route('menu') }}"
+               class="flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-semibold transition {{ request()->routeIs('menu*') || request()->routeIs('product*') ? 'bg-forest-800 text-gold-400 font-bold border-l-4 border-gold-500 shadow-sm' : 'text-slate-200 hover:bg-forest-800 hover:text-white' }}">
+                <i class="fa-solid fa-mug-hot w-5 text-center {{ request()->routeIs('menu*') || request()->routeIs('product*') ? 'text-gold-400' : 'text-slate-400' }}"></i>
+                <span>Flavors & Menu</span>
+            </a>
+            <a href="{{ route('wholesale') }}"
+               class="flex items-center justify-between px-3.5 py-3 rounded-xl text-sm font-semibold transition {{ request()->routeIs('wholesale') ? 'bg-forest-800 text-gold-400 font-bold border-l-4 border-gold-500 shadow-sm' : 'text-slate-200 hover:bg-forest-800 hover:text-white' }}">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-boxes-stacked w-5 text-center {{ request()->routeIs('wholesale') ? 'text-gold-400' : 'text-slate-400' }}"></i>
+                    <span>Wholesale & Cafe Supply</span>
+                </div>
+                <span class="text-[10px] font-bold bg-amber-500/20 text-amber-300 px-1.5 py-0.5 rounded border border-amber-500/30">B2B</span>
+            </a>
+            <a href="{{ route('about') }}"
+               class="flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-semibold transition {{ request()->routeIs('about') ? 'bg-forest-800 text-gold-400 font-bold border-l-4 border-gold-500 shadow-sm' : 'text-slate-200 hover:bg-forest-800 hover:text-white' }}">
+                <i class="fa-solid fa-seedling w-5 text-center {{ request()->routeIs('about') ? 'text-gold-400' : 'text-slate-400' }}"></i>
+                <span>Our Story & Mission</span>
+            </a>
+            <a href="{{ route('order') }}"
+               class="flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-semibold transition {{ request()->routeIs('order*') ? 'bg-forest-800 text-gold-400 font-bold border-l-4 border-gold-500 shadow-sm' : 'text-slate-200 hover:bg-forest-800 hover:text-white' }}">
+                <i class="fa-solid fa-cart-flatbed w-5 text-center {{ request()->routeIs('order*') ? 'text-gold-400' : 'text-slate-400' }}"></i>
+                <span>Custom Order Builder</span>
+            </a>
+            <a href="{{ route('contact') }}"
+               class="flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-semibold transition {{ request()->routeIs('contact') ? 'bg-forest-800 text-gold-400 font-bold border-l-4 border-gold-500 shadow-sm' : 'text-slate-200 hover:bg-forest-800 hover:text-white' }}">
+                <i class="fa-solid fa-envelope w-5 text-center {{ request()->routeIs('contact') ? 'text-gold-400' : 'text-slate-400' }}"></i>
+                <span>Contact Us</span>
+            </a>
 
-            <div class="pt-4 border-t border-forest-800 flex flex-col gap-2">
-                <a href="{{ route('wholesale') }}#sample-request" class="w-full text-center py-2.5 rounded-lg border border-gold-500 text-gold-400 font-semibold text-sm">
-                    Request Cafe Sample Box
+            <div class="pt-4 border-t border-forest-800 flex flex-col gap-2.5">
+                <a href="{{ route('wholesale') }}#sample-request" class="w-full text-center py-3 rounded-xl border border-gold-500/60 bg-forest-800/80 text-gold-300 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-box-open text-gold-400"></i> Request Cafe Sample Box
                 </a>
                 <a href="https://wa.me/919818192575?text=Hello%20Cup2Eat!%20I%20would%20like%20to%20order%20edible%20cups."
                    target="_blank"
-                   class="w-full text-center py-2.5 rounded-lg bg-green-600 text-white font-bold text-sm flex items-center justify-center gap-2">
+                   class="w-full text-center py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 text-white font-heading font-extrabold text-sm flex items-center justify-center gap-2 shadow-lg">
                     <i class="fa-brands fa-whatsapp text-lg"></i>
-                    Chat on WhatsApp: 9818192575
+                    <span>Chat on WhatsApp: 9818192575</span>
                 </a>
             </div>
         </div>
@@ -338,15 +376,15 @@
     </main>
 
     <!-- Global Floating WhatsApp Quick Action Button -->
-    <aside aria-label="Quick Actions" class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2.5">
+    <aside aria-label="Quick Actions" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end gap-2.5">
         <a href="https://wa.me/919818192575?text=Hello%20Cup2Eat!%20I%20am%20interested%20in%20your%20100%25%20Edible%20Cups."
            target="_blank"
-           class="group flex items-center gap-2.5 bg-gradient-to-r from-emerald-500 to-green-600 text-white pl-4 pr-5 py-3 rounded-full shadow-2xl hover:scale-105 hover:shadow-green-500/30 transition-all duration-300">
-            <span class="relative flex h-3 w-3">
+           class="group flex items-center gap-2.5 bg-gradient-to-r from-emerald-500 to-green-600 text-white pl-3.5 sm:pl-4 pr-4 sm:pr-5 py-2.5 sm:py-3 rounded-full shadow-2xl hover:scale-105 hover:shadow-green-500/30 transition-all duration-300">
+            <span class="relative flex h-2.5 sm:h-3 w-2.5 sm:w-3">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+              <span class="relative inline-flex rounded-full h-2.5 sm:h-3 w-2.5 sm:w-3 bg-white"></span>
             </span>
-            <i class="fa-brands fa-whatsapp text-2xl"></i>
+            <i class="fa-brands fa-whatsapp text-xl sm:text-2xl"></i>
             <div class="text-left leading-tight hidden sm:block">
                 <span class="block text-[10px] uppercase font-bold text-emerald-100">Quick Response</span>
                 <span class="block text-xs font-extrabold">Chat With Founder</span>
@@ -373,7 +411,7 @@
              @click="cartDrawerOpen = false"
              class="fixed inset-0 bg-forest-950/70 backdrop-blur-sm transition-opacity"></div>
 
-        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+        <div class="fixed inset-y-0 right-0 max-w-full flex pl-0 sm:pl-10">
             <div x-show="cartDrawerOpen"
                  x-transition:enter="transform transition ease-in-out duration-300"
                  x-transition:enter-start="translate-x-full"
@@ -381,7 +419,7 @@
                  x-transition:leave="transform transition ease-in-out duration-300"
                  x-transition:leave-start="translate-x-0"
                  x-transition:leave-end="translate-x-full"
-                 class="w-screen max-w-md bg-white shadow-2xl flex flex-col">
+                 class="w-full sm:max-w-md bg-white shadow-2xl flex flex-col">
                 
                 <!-- Drawer Header -->
                 <div class="px-6 py-5 bg-forest-900 text-white flex items-center justify-between border-b border-forest-800">
@@ -490,7 +528,7 @@
                         <input type="text"
                                x-model="deliveryCity"
                                placeholder="e.g. Mumbai, Ahmedabad, Gurugram, Bhubaneswar..."
-                               class="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 focus:outline-none focus:border-forest-600 bg-white">
+                               class="w-full px-3 py-2.5 text-base sm:text-xs rounded-xl border border-slate-300 focus:outline-none focus:border-forest-600 bg-white">
                     </div>
 
                     <!-- Cost Breakdown -->

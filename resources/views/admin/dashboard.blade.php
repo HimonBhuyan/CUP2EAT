@@ -36,7 +36,7 @@
 <section class="py-8 bg-[#FAF7F2]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
             
             <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
                 <span class="text-[10px] uppercase font-bold text-slate-400">Total Leads</span>
@@ -129,7 +129,7 @@
 
             <!-- Table -->
             <div class="overflow-x-auto">
-                <table class="w-full text-left text-xs text-slate-700">
+                <table class="w-full min-w-[760px] text-left text-xs text-slate-700">
                     <thead class="bg-slate-50 uppercase text-[10px] font-bold text-slate-400 border-b border-slate-200">
                         <tr>
                             <th class="py-3 px-6">Customer & Business</th>
@@ -252,7 +252,7 @@
             </div>
 
             <div class="overflow-x-auto">
-                <table class="w-full text-left text-xs text-slate-700">
+                <table class="w-full min-w-[760px] text-left text-xs text-slate-700">
                     <thead class="bg-slate-50 uppercase text-[10px] font-bold text-slate-400 border-b border-slate-200">
                         <tr>
                             <th class="py-3 px-6">Quote Ref</th>

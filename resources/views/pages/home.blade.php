@@ -134,13 +134,13 @@
                     </div>
 
                     <!-- Floating Badge: Free Shipping -->
-                    <div class="absolute -top-4 -left-4 bg-gold-500 text-forest-900 font-heading font-black text-xs px-3.5 py-2 rounded-xl shadow-lg border border-gold-300 flex items-center gap-1.5 transform -rotate-3">
+                    <div class="absolute top-2 left-2 sm:-top-4 sm:-left-4 bg-gold-500 text-forest-900 font-heading font-black text-xs px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl shadow-lg border border-gold-300 flex items-center gap-1.5 transform -rotate-3 z-20">
                         <i class="fa-solid fa-truck-fast"></i>
                         <span>PAN-INDIA DISPATCH</span>
                     </div>
 
                     <!-- Floating Badge: Eco Impact (positioned left to avoid fixed action collision) -->
-                    <div class="absolute -bottom-4 -left-3 bg-forest-700/95 backdrop-blur-md text-white text-xs px-4 py-2.5 rounded-xl shadow-xl border border-forest-500/60 flex items-center gap-2">
+                    <div class="absolute -bottom-3 sm:-bottom-4 left-3 sm:-left-3 bg-forest-700/95 backdrop-blur-md text-white text-xs px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl shadow-xl border border-forest-500/60 flex items-center gap-2 z-20">
                         <div class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
                             ♻️
                         </div>
@@ -768,7 +768,7 @@
         </div>
 
         <div class="overflow-x-auto shadow-sm rounded-3xl border border-slate-200">
-            <table class="w-full text-left text-sm text-slate-700">
+            <table class="w-full min-w-[620px] text-left text-sm text-slate-700">
                 <thead class="bg-forest-900 text-white text-xs uppercase tracking-wider font-heading">
                     <tr>
                         <th class="py-4 px-6 font-bold">Feature</th>
