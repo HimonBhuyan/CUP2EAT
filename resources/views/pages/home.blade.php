@@ -157,40 +157,7 @@
     </div>
 </section>
 
-<!-- Impact Metrics Bar -->
-<section class="bg-forest-900 border-y border-forest-800 py-8 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-            
-            <div class="p-4 rounded-2xl bg-forest-800/40 border border-forest-700/40">
-                <div class="text-3xl sm:text-4xl font-heading font-black text-gradient-gold">150,000+</div>
-                <p class="text-xs sm:text-sm font-semibold text-slate-200 mt-1">Plastic & Wax Cups Replaced</p>
-                <span class="text-[11px] text-emerald-400">Saving Indian Landfills</span>
-            </div>
-
-            <div class="p-4 rounded-2xl bg-forest-800/40 border border-forest-700/40">
-                <div class="text-3xl sm:text-4xl font-heading font-black text-gradient-gold">40+ Mins</div>
-                <p class="text-xs sm:text-sm font-semibold text-slate-200 mt-1">Leak-Proof Hot & Cold</p>
-                <span class="text-[11px] text-gold-300">Up to 85°C Chai & Coffee</span>
-            </div>
-
-            <div class="p-4 rounded-2xl bg-forest-800/40 border border-forest-700/40">
-                <div class="text-3xl sm:text-4xl font-heading font-black text-gradient-gold">28+ Cities</div>
-                <p class="text-xs sm:text-sm font-semibold text-slate-200 mt-1">Active Deliveries Across India</p>
-                <span class="text-[11px] text-emerald-400">Mumbai, Ahmedabad, Gurugram</span>
-            </div>
-
-            <div class="p-4 rounded-2xl bg-forest-800/40 border border-forest-700/40">
-                <div class="text-3xl sm:text-4xl font-heading font-black text-gradient-gold">100% Veg</div>
-                <p class="text-xs sm:text-sm font-semibold text-slate-200 mt-1">FSSAI Registered Safe</p>
-                <span class="text-[11px] text-gold-300">Natural Grains & Pure Cocoa</span>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- Professional Infinite Moving Marquee Ticker -->
+<!-- Professional Infinite Moving Marquee Ticker (Positioned Directly Below Hero) -->
 <section class="relative overflow-hidden bg-forest-950 border-y border-gold-500/25 py-3.5 sm:py-4 text-white shadow-2xl z-20">
     <!-- Gradient Edge Fades for Seamless In/Out Horizon -->
     <div class="absolute left-0 top-0 bottom-0 w-20 sm:w-36 bg-gradient-to-r from-forest-950 via-forest-950/90 to-transparent z-10 pointer-events-none"></div>
@@ -364,6 +331,39 @@
             <span class="text-gold-500/60 text-xs select-none">✦</span>
         </div>
 
+    </div>
+</section>
+
+<!-- Impact Metrics Bar (Positioned Below Marquee) -->
+<section class="bg-forest-900 border-b border-forest-800 py-8 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+            
+            <div class="p-4 rounded-2xl bg-forest-800/40 border border-forest-700/40">
+                <div class="text-3xl sm:text-4xl font-heading font-black text-gradient-gold">150,000+</div>
+                <p class="text-xs sm:text-sm font-semibold text-slate-200 mt-1">Plastic & Wax Cups Replaced</p>
+                <span class="text-[11px] text-emerald-400">Saving Indian Landfills</span>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-forest-800/40 border border-forest-700/40">
+                <div class="text-3xl sm:text-4xl font-heading font-black text-gradient-gold">40+ Mins</div>
+                <p class="text-xs sm:text-sm font-semibold text-slate-200 mt-1">Leak-Proof Hot & Cold</p>
+                <span class="text-[11px] text-gold-300">Up to 85°C Chai & Coffee</span>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-forest-800/40 border border-forest-700/40">
+                <div class="text-3xl sm:text-4xl font-heading font-black text-gradient-gold">28+ Cities</div>
+                <p class="text-xs sm:text-sm font-semibold text-slate-200 mt-1">Active Deliveries Across India</p>
+                <span class="text-[11px] text-emerald-400">Mumbai, Ahmedabad, Gurugram</span>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-forest-800/40 border border-forest-700/40">
+                <div class="text-3xl sm:text-4xl font-heading font-black text-gradient-gold">100% Veg</div>
+                <p class="text-xs sm:text-sm font-semibold text-slate-200 mt-1">FSSAI Registered Safe</p>
+                <span class="text-[11px] text-gold-300">Natural Grains & Pure Cocoa</span>
+            </div>
+
+        </div>
     </div>
 </section>
 
