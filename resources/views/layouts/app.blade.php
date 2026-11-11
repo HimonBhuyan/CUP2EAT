@@ -112,6 +112,34 @@
         .live-interactive-glow {
             background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 40%), rgba(212, 175, 55, 0.14), rgba(20, 76, 55, 0.06) 45%, transparent 75%);
         }
+
+        /* Professional Infinite Smooth 60fps Marquee Keyframes */
+        @keyframes marqueeScroll {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+        }
+        @keyframes marqueeScrollReverse {
+            0% { transform: translate3d(-50%, 0, 0); }
+            100% { transform: translate3d(0, 0, 0); }
+        }
+        .animate-marquee-infinite {
+            display: flex;
+            width: max-content;
+            will-change: transform;
+            animation: marqueeScroll 36s linear infinite;
+        }
+        .animate-marquee-infinite:hover {
+            animation-play-state: paused;
+        }
+        .animate-marquee-reverse {
+            display: flex;
+            width: max-content;
+            will-change: transform;
+            animation: marqueeScrollReverse 40s linear infinite;
+        }
+        .animate-marquee-reverse:hover {
+            animation-play-state: paused;
+        }
     </style>
 
     @stack('styles')

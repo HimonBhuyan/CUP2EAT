@@ -190,6 +190,183 @@
     </div>
 </section>
 
+<!-- Professional Infinite Moving Marquee Ticker -->
+<section class="relative overflow-hidden bg-forest-950 border-y border-gold-500/25 py-3.5 sm:py-4 text-white shadow-2xl z-20">
+    <!-- Gradient Edge Fades for Seamless In/Out Horizon -->
+    <div class="absolute left-0 top-0 bottom-0 w-20 sm:w-36 bg-gradient-to-r from-forest-950 via-forest-950/90 to-transparent z-10 pointer-events-none"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-20 sm:w-36 bg-gradient-to-l from-forest-950 via-forest-950/90 to-transparent z-10 pointer-events-none"></div>
+
+    <div class="animate-marquee-infinite flex items-center gap-10 whitespace-nowrap text-sm sm:text-base font-heading select-none">
+        
+        <!-- Track 1 Set -->
+        <div class="flex items-center gap-10">
+            <!-- 1. Slogan -->
+            <div class="flex items-center gap-3">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/20 text-gold-300 font-extrabold text-xs uppercase tracking-wider border border-gold-400/40">
+                    <i class="fa-solid fa-fire text-amber-400"></i> Trending
+                </span>
+                <span class="text-white font-extrabold tracking-wide text-base">EAT YOUR DRINK 🍷😋</span>
+            </div>
+
+            <span class="text-gold-500/60 text-xs select-none">✦</span>
+
+            <!-- 2. Edible -->
+            <div class="flex items-center gap-2 text-emerald-400 font-bold">
+                <i class="fa-solid fa-leaf text-emerald-400"></i>
+                <span class="text-slate-100">100% Edible Wafer Cups</span>
+            </div>
+
+            <span class="text-gold-500/60 text-xs select-none">✦</span>
+
+            <!-- 3. Leak Proof -->
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-clock-rotate-left text-gold-400"></i>
+                <span class="text-gold-300 font-bold">40+ Mins Leak-Proof</span>
+                <span class="text-xs text-slate-300 hidden sm:inline">(Hot & Cold up to 85°C)</span>
+            </div>
+
+            <span class="text-gold-500/60 text-xs select-none">✦</span>
+
+            <!-- 4. FSSAI & Pure Veg -->
+            <div class="flex items-center gap-3">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 font-extrabold text-xs uppercase tracking-wider border border-emerald-400/40">
+                    <i class="fa-solid fa-shield-check text-emerald-400"></i> Certified
+                </span>
+                <span class="text-white font-bold">FSSAI Licensed & 100% Pure Veg</span>
+            </div>
+
+            <span class="text-gold-500/60 text-xs select-none">✦</span>
+
+            <!-- 5. Chai & Coffee -->
+            <div class="flex items-center gap-2 text-amber-300 font-bold">
+                <i class="fa-solid fa-mug-hot text-gold-400"></i>
+                <span class="text-slate-100">Kadak Chai • Barista Latte • Cold Frappes</span>
+            </div>
+
+            <span class="text-gold-500/60 text-xs select-none">✦</span>
+
+            <!-- 6. Pan-India Delivery -->
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-truck-fast text-emerald-400"></i>
+                <span class="text-slate-200 font-semibold">Pan-India Dispatch:</span>
+                <span class="text-gold-300 font-bold">Mumbai • Ahmedabad • Gurugram • Delhi NCR • Odisha</span>
+            </div>
+
+            <span class="text-gold-500/60 text-xs select-none">✦</span>
+
+            <!-- 7. Startup Mahakumbh -->
+            <div class="flex items-center gap-3">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/20 text-gold-300 font-extrabold text-xs uppercase tracking-wider border border-gold-400/40">
+                    <i class="fa-solid fa-trophy text-gold-400"></i> Recognition
+                </span>
+                <span class="text-white font-bold">Featured at Startup Mahakumbh 2026</span>
+            </div>
+
+            <span class="text-gold-500/60 text-xs select-none">✦</span>
+
+            <!-- 8. Flavors -->
+            <div class="flex items-center gap-2 text-gold-300 font-bold">
+                <i class="fa-solid fa-cookie-bite text-amber-500"></i>
+                <span class="text-slate-100">Chocolate Glaze • Cardamom Elaichi • French Vanilla • Strawberry</span>
+            </div>
+
+            <span class="text-gold-500/60 text-xs select-none">✦</span>
+
+            <!-- 9. Zero Waste -->
+            <div class="flex items-center gap-2 text-emerald-400 font-black tracking-wide">
+                <i class="fa-solid fa-recycle text-emerald-400"></i>
+                <span>Zero Plastic • Zero Paper Waste • Pure Crunch!</span>
+            </div>
+
+            <span class="text-gold-500/60 text-xs select-none">✦</span>
+        </div>
+
+        <!-- Track 2 Set (Exact clone for seamless infinite loop) -->
+        <div class="flex items-center gap-10" aria-hidden="true">
+            <!-- 1. Slogan -->
+            <div class="flex items-center gap-3">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/20 text-gold-300 font-extrabold text-xs uppercase tracking-wider border border-gold-400/40">
+                    <i class="fa-solid fa-fire text-amber-400"></i> Trending
+                </span>
+                <span class="text-white font-extrabold tracking-wide text-base">EAT YOUR DRINK 🍷😋</span>
+            </div>
+
+            <span class="text-gold-500/60 text-xs select-none">✦</span>
+
+            <!-- 2. Edible -->
+            <div class="flex items-center gap-2 text-emerald-400 font-bold">
+                <i class="fa-solid fa-leaf text-emerald-400"></i>
+                <span class="text-slate-100">100% Edible Wafer Cups</span>
+            </div>
+
+            <span class="text-gold-500/60 text-xs select-none">✦</span>
+
+            <!-- 3. Leak Proof -->
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-clock-rotate-left text-gold-400"></i>
+                <span class="text-gold-300 font-bold">40+ Mins Leak-Proof</span>
+                <span class="text-xs text-slate-300 hidden sm:inline">(Hot & Cold up to 85°C)</span>
+            </div>
+
+            <span class="text-gold-500/60 text-xs select-none">✦</span>
+
+            <!-- 4. FSSAI & Pure Veg -->
+            <div class="flex items-center gap-3">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 font-extrabold text-xs uppercase tracking-wider border border-emerald-400/40">
+                    <i class="fa-solid fa-shield-check text-emerald-400"></i> Certified
+                </span>
+                <span class="text-white font-bold">FSSAI Licensed & 100% Pure Veg</span>
+            </div>
+
+            <span class="text-gold-500/60 text-xs select-none">✦</span>
+
+            <!-- 5. Chai & Coffee -->
+            <div class="flex items-center gap-2 text-amber-300 font-bold">
+                <i class="fa-solid fa-mug-hot text-gold-400"></i>
+                <span class="text-slate-100">Kadak Chai • Barista Latte • Cold Frappes</span>
+            </div>
+
+            <span class="text-gold-500/60 text-xs select-none">✦</span>
+
+            <!-- 6. Pan-India Delivery -->
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-truck-fast text-emerald-400"></i>
+                <span class="text-slate-200 font-semibold">Pan-India Dispatch:</span>
+                <span class="text-gold-300 font-bold">Mumbai • Ahmedabad • Gurugram • Delhi NCR • Odisha</span>
+            </div>
+
+            <span class="text-gold-500/60 text-xs select-none">✦</span>
+
+            <!-- 7. Startup Mahakumbh -->
+            <div class="flex items-center gap-3">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/20 text-gold-300 font-extrabold text-xs uppercase tracking-wider border border-gold-400/40">
+                    <i class="fa-solid fa-trophy text-gold-400"></i> Recognition
+                </span>
+                <span class="text-white font-bold">Featured at Startup Mahakumbh 2026</span>
+            </div>
+
+            <span class="text-gold-500/60 text-xs select-none">✦</span>
+
+            <!-- 8. Flavors -->
+            <div class="flex items-center gap-2 text-gold-300 font-bold">
+                <i class="fa-solid fa-cookie-bite text-amber-500"></i>
+                <span class="text-slate-100">Chocolate Glaze • Cardamom Elaichi • French Vanilla • Strawberry</span>
+            </div>
+
+            <span class="text-gold-500/60 text-xs select-none">✦</span>
+
+            <!-- 9. Zero Waste -->
+            <div class="flex items-center gap-2 text-emerald-400 font-black tracking-wide">
+                <i class="fa-solid fa-recycle text-emerald-400"></i>
+                <span>Zero Plastic • Zero Paper Waste • Pure Crunch!</span>
+            </div>
+
+            <span class="text-gold-500/60 text-xs select-none">✦</span>
+        </div>
+
+    </div>
+</section>
+
 <!-- How It Works: 4-Step Interactive Journey -->
 <section class="py-20 bg-[#FAF7F2]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
