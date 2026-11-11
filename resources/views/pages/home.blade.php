@@ -5,18 +5,27 @@
 
 @section('content')
 
-<!-- Hero Section (With Live Interactive Background) -->
-<section id="hero-section" class="relative bg-gradient-to-b from-forest-800 via-forest-900 to-forest-900 text-white pt-20 sm:pt-28 lg:pt-32 pb-24 lg:pb-32 overflow-hidden bg-grain">
+<!-- Hero Section (With Cinematic Cafe Ambiance & Live Interactive Elements) -->
+<section id="hero-section" class="relative text-white pt-20 sm:pt-28 lg:pt-32 pb-24 lg:pb-32 overflow-hidden bg-forest-950">
     
-    <!-- 1. Interactive Cursor Glow Layer (Follows Mouse in Real-Time) -->
+    <!-- 1. Cinematic 4K Artisan Coffee & Roastery Background with Rich Emerald & Cocoa Vignette -->
+    <div class="absolute inset-0 z-0">
+        <img src="{{ asset('images/brand/hero-bg-4k.jpg') }}" alt="Artisan Coffee Roastery Ambiance" class="w-full h-full object-cover object-center scale-105 transition-transform duration-1000 ease-out">
+        <!-- Subtle dark emerald & cocoa vignette overlays for appetizing warmth and razor-sharp readability -->
+        <div class="absolute inset-0 bg-forest-950/65 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-forest-950/95 via-forest-950/80 to-forest-950/40"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-forest-950/75 via-transparent to-forest-950"></div>
+    </div>
+
+    <!-- 2. Interactive Cursor Glow Layer (Follows Mouse in Real-Time) -->
     <div class="absolute inset-0 pointer-events-none live-interactive-glow z-0"></div>
 
-    <!-- 2. Living Ambient Aurora Orbs (Smooth Floating & Breathing Light) -->
+    <!-- 3. Living Ambient Aurora Orbs (Smooth Floating & Breathing Light) -->
     <div class="absolute -top-20 left-1/4 w-[520px] h-[520px] bg-emerald-500/15 rounded-full blur-3xl pointer-events-none animate-float-slow z-0"></div>
-    <div class="absolute top-1/3 -right-20 w-[480px] h-[480px] bg-gold-500/12 rounded-full blur-3xl pointer-events-none animate-float-reverse z-0"></div>
-    <div class="absolute -bottom-24 left-1/3 w-[550px] h-[550px] bg-amber-600/10 rounded-full blur-3xl pointer-events-none animate-pulse-glow z-0"></div>
+    <div class="absolute top-1/3 -right-20 w-[480px] h-[480px] bg-gold-500/15 rounded-full blur-3xl pointer-events-none animate-float-reverse z-0"></div>
+    <div class="absolute -bottom-24 left-1/3 w-[550px] h-[550px] bg-amber-600/12 rounded-full blur-3xl pointer-events-none animate-pulse-glow z-0"></div>
 
-    <!-- 3. Live 60fps Golden Aroma & Eco Motes Particle Canvas -->
+    <!-- 4. Live 60fps Golden Aroma & Eco Motes Particle Canvas -->
     <canvas id="live-hero-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
