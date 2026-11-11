@@ -74,4 +74,44 @@ class AdminController extends Controller
 
         return redirect()->back()->with('success', 'Inquiry deleted successfully.');
     }
+
+    public function exportInquiriesCsv()
+    {
+        $inquiries = Inquiry::orderBy('created_at', 'desc')->get();
+        $filename = 'cup2eat_inquiries_' . date('Y-m-d') . '.csv';
+
+        $headers = [
+            'Content-Type' => 'text/csv',
+            'Content-Disposition' => "attachment; filename=\"$filename\"",
+            'Pragma' => 'no-cache',
+            'Cache-Control' => 'must-revalidate, post-check=0, pre-check=0',
+            'Expires' => '0',
+        ];
+
+        $callback = function () use ($inquiries) {
+            $file = fopen('php://output', 'w');
+            fputcsv($file, ['ID', 'Date', 'Type', 'Name', 'Phone', 'Email', 'City', 'Business Type', 'Volume Needed', 'Flavors', 'Status', 'Message', 'Admin Notes']);
+
+            foreach ($inquiries as $inq) {
+                fputcsv($file, [
+                    $inq->id,
+                    $inq->created_at->format('Y-m-d H:i'),
+                    $inq->type,
+                    $inq->name,
+                    $inq->phone,
+                    $inq->email,
+                    $inq->city,
+                    $inq->business_type,
+                    $inq->volume_needed,
+                    $inq->flavor_interest,
+                    $inq->status,
+                    $inq->message,
+                    $inq->admin_notes,
+                ]);
+            }
+            fclose($file);
+        };
+
+        return response()->stream($callback, 200, $headers);
+    }
 }

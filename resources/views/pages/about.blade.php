@@ -30,11 +30,21 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             <div class="lg:col-span-5">
-                <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-forest-800">
-                    <img src="{{ asset('images/brand/standee-banner.jpg') }}" alt="Founder Varun Khera with Cup2Eat Banner" class="w-full h-auto object-cover">
-                    <div class="absolute bottom-4 left-4 right-4 bg-forest-900/90 backdrop-blur-md p-4 rounded-2xl border border-gold-500/30 text-white">
-                        <h4 class="font-heading font-black text-lg text-white">Varun Khera</h4>
-                        <p class="text-xs text-gold-300">Founder & Managing Director, Cup2Eat</p>
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-forest-800 bg-forest-900 group">
+                    <img src="{{ asset('images/brand/latte-art-cup-4k.jpg') }}" alt="Cup2Eat Signature Edible Cup" class="w-full h-auto object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute top-4 right-4 w-16 h-16 rounded-full overflow-hidden p-1 bg-forest-900/90 border border-gold-500 shadow-xl">
+                        <img src="{{ asset('images/brand/logo.jpg') }}" alt="Cup2Eat Logo" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <div class="absolute bottom-4 left-4 right-4 bg-forest-900/95 backdrop-blur-md p-4 rounded-2xl border border-gold-500/30 text-white">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h4 class="font-heading font-black text-lg text-white">Varun Khera</h4>
+                                <p class="text-xs text-gold-300">Founder & Managing Director, Cup2Eat</p>
+                            </div>
+                            <span class="text-xs font-bold bg-gold-500/20 text-gold-400 px-2.5 py-1 rounded-full border border-gold-500/30">
+                                40+ Mins Leak Proof
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -208,16 +218,16 @@
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div class="rounded-2xl overflow-hidden shadow-sm aspect-square bg-slate-100">
-                <img src="{{ asset('images/brand/founder-varun.jpg') }}" alt="Founder Varun Khera" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                <img src="{{ asset('images/brand/latte-art-cup-4k.jpg') }}" alt="Latte Art Cup" class="w-full h-full object-cover hover:scale-105 transition duration-300">
             </div>
             <div class="rounded-2xl overflow-hidden shadow-sm aspect-square bg-slate-100">
-                <img src="{{ asset('images/brand/latte-art-cup.jpg') }}" alt="Latte Art Cup" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                <img src="{{ asset('images/brand/chai-cup-4k.jpg') }}" alt="Kadak Chai Cup" class="w-full h-full object-cover hover:scale-105 transition duration-300">
             </div>
             <div class="rounded-2xl overflow-hidden shadow-sm aspect-square bg-slate-100">
-                <img src="{{ asset('images/brand/pizza-cups.jpg') }}" alt="Pizza Cups" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                <img src="{{ asset('images/brand/cold-coffee-4k.jpg') }}" alt="Cold Coffee Glass" class="w-full h-full object-cover hover:scale-105 transition duration-300">
             </div>
             <div class="rounded-2xl overflow-hidden shadow-sm aspect-square bg-slate-100">
-                <img src="{{ asset('images/brand/delivery-bike.jpg') }}" alt="Delivery Cartons on Bike" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                <img src="{{ asset('images/brand/wholesale-box-4k.jpg') }}" alt="Wholesale Master Packaging" class="w-full h-full object-cover hover:scale-105 transition duration-300">
             </div>
         </div>
 
@@ -233,3 +243,4 @@
 </section>
 
 @endsection
+

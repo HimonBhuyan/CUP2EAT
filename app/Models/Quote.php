@@ -28,3 +28,4 @@ class Quote extends Model
         'estimated_total' => 'decimal:2',
     ];
 }
+

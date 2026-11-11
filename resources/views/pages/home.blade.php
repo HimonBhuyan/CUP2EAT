@@ -68,9 +68,9 @@
                 <!-- Social Proof Avatars & Orders -->
                 <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 text-xs text-slate-300">
                     <div class="flex -space-x-2">
-                        <img class="inline-block h-8 w-8 rounded-full ring-2 ring-forest-800 object-cover" src="{{ asset('images/brand/founder-varun.jpg') }}" alt="Founder Varun Khera">
-                        <img class="inline-block h-8 w-8 rounded-full ring-2 ring-forest-800 object-cover" src="{{ asset('images/brand/customer-drinking.jpg') }}" alt="Customer enjoying cup">
-                        <img class="inline-block h-8 w-8 rounded-full ring-2 ring-forest-800 object-cover" src="{{ asset('images/brand/standee-banner.jpg') }}" alt="Cup2Eat Showcase">
+                        <img class="inline-block h-8 w-8 rounded-full ring-2 ring-forest-800 object-cover" src="{{ asset('images/brand/logo.jpg') }}" alt="Cup2Eat Official">
+                        <img class="inline-block h-8 w-8 rounded-full ring-2 ring-forest-800 object-cover" src="{{ asset('images/brand/latte-art-cup-4k.jpg') }}" alt="Barista Latte Cup">
+                        <img class="inline-block h-8 w-8 rounded-full ring-2 ring-forest-800 object-cover" src="{{ asset('images/brand/chai-cup-4k.jpg') }}" alt="Kadak Chai Cup">
                     </div>
                     <div>
                         <span class="font-bold text-white">150,000+ Cups Dispatched</span> across Mumbai, Ahmedabad, Gurugram, Odisha & Pan-India.
@@ -86,7 +86,7 @@
                     <!-- Outer decorative frame with gold gradient border -->
                     <div class="relative rounded-3xl p-2.5 bg-gradient-to-tr from-gold-500/40 via-forest-600 to-gold-400/30 shadow-2xl">
                         <div class="relative rounded-2xl overflow-hidden bg-forest-800 aspect-[4/5] group">
-                            <img src="{{ asset('images/brand/latte-art-cup.jpg') }}"
+                            <img src="{{ asset('images/brand/latte-art-cup-4k.jpg') }}"
                                  alt="Cup2Eat Edible Latte Art Cup"
                                  class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700 ease-out">
                             
@@ -281,7 +281,7 @@
             <!-- Flavor 1: Dark Chocolate -->
             <div class="bg-forest-800 rounded-3xl overflow-hidden border border-forest-700/60 shadow-xl group hover:border-gold-500/50 transition duration-300">
                 <div class="aspect-[16/10] overflow-hidden relative">
-                    <img src="{{ asset('images/brand/bulk-tray.jpg') }}" alt="Chocolate Coated Cup" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="{{ asset('images/brand/latte-art-cup-4k.jpg') }}" alt="Chocolate Coated Cup" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     <div class="absolute top-3 right-3 bg-forest-900/90 text-gold-400 text-xs font-bold px-3 py-1 rounded-full border border-gold-500/30">
                         ⭐ Best Seller
                     </div>
@@ -307,7 +307,7 @@
             <!-- Flavor 2: Royal Elaichi -->
             <div class="bg-forest-800 rounded-3xl overflow-hidden border border-forest-700/60 shadow-xl group hover:border-gold-500/50 transition duration-300">
                 <div class="aspect-[16/10] overflow-hidden relative">
-                    <img src="{{ asset('images/brand/chai-cup.jpg') }}" alt="Royal Elaichi Chai Cup" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="{{ asset('images/brand/chai-cup-4k.jpg') }}" alt="Royal Elaichi Chai Cup" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     <div class="absolute top-3 right-3 bg-amber-500 text-forest-900 text-xs font-bold px-3 py-1 rounded-full">
                         ☕ Chai Special
                     </div>
@@ -333,7 +333,7 @@
             <!-- Flavor 3: 150ml Cold Coffee & Milkshake -->
             <div class="bg-forest-800 rounded-3xl overflow-hidden border border-forest-700/60 shadow-xl group hover:border-gold-500/50 transition duration-300">
                 <div class="aspect-[16/10] overflow-hidden relative">
-                    <img src="{{ asset('images/brand/cold-coffee-150ml.jpg') }}" alt="150ml Cold Coffee Shake Cup" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="{{ asset('images/brand/cold-coffee-4k.jpg') }}" alt="150ml Cold Coffee Shake Cup" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     <div class="absolute top-3 right-3 bg-emerald-500 text-forest-900 text-xs font-bold px-3 py-1 rounded-full">
                         ❄️ Cold Brews & Shakes
                     </div>
@@ -356,36 +356,10 @@
                 </div>
             </div>
 
-            <!-- Flavor 4: Savory Baked Pizza Cup -->
+            <!-- Flavor 4: Vanilla Cup -->
             <div class="bg-forest-800 rounded-3xl overflow-hidden border border-forest-700/60 shadow-xl group hover:border-gold-500/50 transition duration-300">
                 <div class="aspect-[16/10] overflow-hidden relative">
-                    <img src="{{ asset('images/brand/pizza-cups.jpg') }}" alt="Savory Pizza Cups" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    <div class="absolute top-3 right-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-                        🍕 Savory Snack
-                    </div>
-                </div>
-                <div class="p-6 space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-bold uppercase tracking-wider text-gold-300">Cheesy & Crispy</span>
-                        <span class="text-xs bg-forest-700 text-emerald-300 font-semibold px-2 py-0.5 rounded">100ml</span>
-                    </div>
-                    <h3 class="font-heading font-bold text-xl text-white">Baked Pizza & Chaat Cups</h3>
-                    <p class="text-slate-300 text-xs leading-relaxed">
-                        A sensation! Baked with mozzarella cheese, oregano seasoning, veggies or chaat filling. Oven & microwave safe.
-                    </p>
-                    <div class="pt-3 border-t border-forest-700 flex items-center justify-between">
-                        <span class="text-gold-400 font-bold text-sm">Wholesale Available</span>
-                        <a href="{{ route('product.show', 'savory-snack-pizza-cups') }}" class="text-xs text-white font-semibold hover:text-gold-300 flex items-center gap-1">
-                            Details <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Flavor 5: French Vanilla -->
-            <div class="bg-forest-800 rounded-3xl overflow-hidden border border-forest-700/60 shadow-xl group hover:border-gold-500/50 transition duration-300">
-                <div class="aspect-[16/10] overflow-hidden relative">
-                    <img src="{{ asset('images/brand/flavors-showcase.jpg') }}" alt="French Vanilla Cup" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="{{ asset('images/brand/vanilla-cup-4k.jpg') }}" alt="French Vanilla Cup" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     <div class="absolute top-3 right-3 bg-forest-900/90 text-gold-400 text-xs font-bold px-3 py-1 rounded-full">
                         🍦 Sweet & Subtle
                     </div>
@@ -408,10 +382,10 @@
                 </div>
             </div>
 
-            <!-- Flavor 6: Fruit Infusions (Mango & Strawberry) -->
+            <!-- Flavor 5: Strawberry Cup -->
             <div class="bg-forest-800 rounded-3xl overflow-hidden border border-forest-700/60 shadow-xl group hover:border-gold-500/50 transition duration-300">
                 <div class="aspect-[16/10] overflow-hidden relative">
-                    <img src="{{ asset('images/brand/menu-flavors.jpg') }}" alt="Mango and Strawberry Cups" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="{{ asset('images/brand/strawberry-cup-4k.jpg') }}" alt="Strawberry Dessert Cup" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     <div class="absolute top-3 right-3 bg-pink-500 text-white text-xs font-bold px-3 py-1 rounded-full">
                         🍓 Fruit Blast
                     </div>
@@ -421,14 +395,40 @@
                         <span class="text-xs font-bold uppercase tracking-wider text-gold-300">Summer Delights</span>
                         <span class="text-xs bg-forest-700 text-emerald-300 font-semibold px-2 py-0.5 rounded">Pack of 8</span>
                     </div>
-                    <h3 class="font-heading font-bold text-xl text-white">Strawberry & Alphonso Mango</h3>
+                    <h3 class="font-heading font-bold text-xl text-white">Strawberry Dessert Cup</h3>
                     <p class="text-slate-300 text-xs leading-relaxed">
-                        Fruity, colorful wafer cups bursting with natural berry and ripe mango flavours. Loved by children and dessert bars.
+                        Fruity, colorful wafer cups bursting with natural berry flavours. Loved by children, dessert bars and gelatos.
                     </p>
                     <div class="pt-3 border-t border-forest-700 flex items-center justify-between">
-                        <span class="text-gold-400 font-bold text-sm">Starting at ₹75</span>
+                        <span class="text-gold-400 font-bold text-sm">Starting at ₹109</span>
                         <a href="{{ route('menu') }}" class="text-xs text-white font-semibold hover:text-gold-300 flex items-center gap-1">
                             Explore <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flavor 6: Wholesale Carton Master Pack -->
+            <div class="bg-forest-800 rounded-3xl overflow-hidden border border-forest-700/60 shadow-xl group hover:border-gold-500/50 transition duration-300">
+                <div class="aspect-[16/10] overflow-hidden relative">
+                    <img src="{{ asset('images/brand/wholesale-box-4k.jpg') }}" alt="Wholesale Master Carton" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute top-3 right-3 bg-gold-500 text-forest-900 text-xs font-bold px-3 py-1 rounded-full">
+                        📦 396 Cups Master Box
+                    </div>
+                </div>
+                <div class="p-6 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold uppercase tracking-wider text-gold-300">Cafe Bulk Solution</span>
+                        <span class="text-xs bg-forest-700 text-gold-300 font-semibold px-2 py-0.5 rounded">396 Cups</span>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-white">Mix Flavour Mega Carton</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Flagship cafe carton featuring assorted Chocolate, Elaichi and Vanilla edible cups. Free shipping across India.
+                    </p>
+                    <div class="pt-3 border-t border-forest-700 flex items-center justify-between">
+                        <span class="text-gold-400 font-bold text-sm">₹3,999 (~₹10/cup)</span>
+                        <a href="{{ route('wholesale') }}" class="text-xs text-white font-semibold hover:text-gold-300 flex items-center gap-1">
+                            Details <i class="fa-solid fa-chevron-right text-[10px]"></i>
                         </a>
                     </div>
                 </div>
@@ -488,7 +488,7 @@
 
                 <div class="lg:col-span-5">
                     <div class="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-gold-500/40">
-                        <img src="{{ asset('images/brand/wholesale-poster.jpg') }}" alt="Cup2Eat Wholesale ₹3,999 for 396 cups" class="w-full h-auto object-cover">
+                        <img src="{{ asset('images/brand/wholesale-box-4k.jpg') }}" alt="Cup2Eat Wholesale Master Box" class="w-full h-auto object-cover">
                     </div>
                 </div>
             </div>
@@ -589,11 +589,11 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-            <!-- Card 1: Founder Varun -->
-            <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200">
-                <img src="{{ asset('images/brand/founder-cups.jpg') }}" alt="Founder Varun Khera with Cup2Eat Sleeves" class="w-full aspect-square object-cover">
+            <!-- Card 1: Founder Varun & Innovation -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200 group hover:shadow-xl transition">
+                <img src="{{ asset('images/brand/latte-art-cup-4k.jpg') }}" alt="Signature Edible Cup Innovation" class="w-full aspect-square object-cover group-hover:scale-105 transition duration-500">
                 <div class="p-5">
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Founder's Vision</span>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Founder's Innovation</span>
                     <h4 class="font-heading font-bold text-base text-forest-900 mt-2">Varun Khera</h4>
                     <p class="text-xs text-slate-600 mt-1">
                         Pioneering single-serve edible packaging to make sustainable drinking effortless and fun.
@@ -601,9 +601,9 @@
                 </div>
             </div>
 
-            <!-- Card 2: Award Ceremony -->
-            <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200">
-                <img src="{{ asset('images/brand/award-ceremony.jpg') }}" alt="Cup2Eat Winning Startup Awards" class="w-full aspect-square object-cover">
+            <!-- Card 2: Award Ceremony / Chai Special -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200 group hover:shadow-xl transition">
+                <img src="{{ asset('images/brand/chai-cup-4k.jpg') }}" alt="Steaming Kadak Chai in Elaichi Wafer Cup" class="w-full aspect-square object-cover group-hover:scale-105 transition duration-500">
                 <div class="p-5">
                     <span class="text-[10px] font-bold uppercase tracking-wider text-amber-700 bg-amber-50 px-2 py-0.5 rounded">Awards & Honors</span>
                     <h4 class="font-heading font-bold text-base text-forest-900 mt-2">Startup Mahakumbh</h4>
@@ -614,8 +614,8 @@
             </div>
 
             <!-- Card 3: Pan-India Delivery -->
-            <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200">
-                <img src="{{ asset('images/brand/mumbai-delivery.jpg') }}" alt="Cartons Dispatched to Mumbai" class="w-full aspect-square object-cover">
+            <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200 group hover:shadow-xl transition">
+                <img src="{{ asset('images/brand/wholesale-box-4k.jpg') }}" alt="Master Shipping Cartons Pan-India" class="w-full aspect-square object-cover group-hover:scale-105 transition duration-500">
                 <div class="p-5">
                     <span class="text-[10px] font-bold uppercase tracking-wider text-forest-700 bg-forest-50 px-2 py-0.5 rounded">Logistics</span>
                     <h4 class="font-heading font-bold text-base text-forest-900 mt-2">Pan-India Shipments</h4>
@@ -626,13 +626,13 @@
             </div>
 
             <!-- Card 4: Customer Delight -->
-            <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200">
-                <img src="{{ asset('images/brand/customer-drinking.jpg') }}" alt="Customers enjoying edible cups" class="w-full aspect-square object-cover">
+            <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200 group hover:shadow-xl transition">
+                <img src="{{ asset('images/brand/cold-coffee-4k.jpg') }}" alt="150ml Cold Coffee Shake Glasses" class="w-full aspect-square object-cover group-hover:scale-105 transition duration-500">
                 <div class="p-5">
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-pink-700 bg-pink-50 px-2 py-0.5 rounded">Live Events</span>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-pink-700 bg-pink-50 px-2 py-0.5 rounded">Beverage Revolution</span>
                     <h4 class="font-heading font-bold text-base text-forest-900 mt-2">100% Smiles Guaranteed</h4>
                     <p class="text-xs text-slate-600 mt-1">
-                        The astonishment when customers realize they can eat their tea cup after drinking!
+                        The astonishment when customers realize they can eat their tea and coffee cup after drinking!
                     </p>
                 </div>
             </div>
@@ -820,3 +820,4 @@
 </section>
 
 @endsection
+

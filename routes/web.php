@@ -25,6 +25,7 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 // Admin Portal Routes
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
+    Route::get('/export/inquiries', [AdminController::class, 'exportInquiriesCsv'])->name('inquiries.export');
     Route::post('/inquiries/{id}/status', [AdminController::class, 'updateInquiryStatus'])->name('inquiry.update');
     Route::delete('/inquiries/{id}', [AdminController::class, 'deleteInquiry'])->name('inquiry.delete');
     Route::post('/quotes/{id}/status', [AdminController::class, 'updateQuoteStatus'])->name('quote.update');

@@ -55,7 +55,7 @@
 
             <div class="lg:col-span-5">
                 <div class="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-gold-500/30">
-                    <img src="{{ asset('images/brand/wholesale-poster.jpg') }}" alt="Wholesale 396 Cups Poster" class="w-full h-auto object-cover">
+                    <img src="{{ asset('images/brand/wholesale-box-4k.jpg') }}" alt="Wholesale 396 Cups Master Box" class="w-full h-auto object-cover">
                     <div class="absolute bottom-3 left-3 right-3 bg-forest-900/90 backdrop-blur-md p-3 rounded-xl border border-gold-500/30 text-xs text-center text-gold-300 font-bold">
                         ⭐ Special Wholesale Rate: ₹3,999 for 396 Cups (Includes Freight!)
                     </div>
@@ -366,3 +366,4 @@
 </section>
 
 @endsection
+
