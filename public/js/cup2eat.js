@@ -143,57 +143,13 @@ function globalApp() {
     return {
         cart: JSON.parse(localStorage.getItem('cup2eat_cart') || '[]'),
         cartDrawerOpen: false,
-        soundActive: true,
         deliveryCity: '',
         orderNotes: '',
-
-        // Live Social Proof Notification Data
-        liveToast: {
-            visible: false,
-            title: '',
-            subtitle: '',
-            time: '',
-            icon: 'fa-truck-fast'
-        },
-
-        liveOrdersQueue: [
-            { title: "2x Wholesale Mega Box (396 Cups)", subtitle: "Dispatched to Bandra West, Mumbai", time: "4 mins ago", icon: "fa-truck-fast" },
-            { title: "Cafe Sample Box (Assorted Flavors)", subtitle: "Requested by Roastery Cafe, Ahmedabad", time: "8 mins ago", icon: "fa-box-open" },
-            { title: "100ml CC Premium Tray (200 Pcs)", subtitle: "Order confirmed for Cyber City, Gurugram", time: "14 mins ago", icon: "fa-mug-hot" },
-            { title: "150ml Cold Coffee Shake Glasses", subtitle: "Dispatched to Indiranagar, Bengaluru", time: "19 mins ago", icon: "fa-ice-cream" },
-            { title: "500 Edible Cups for Eco-Wedding", subtitle: "Inquiry received from Bhubaneswar, Odisha", time: "27 mins ago", icon: "fa-champagne-glasses" }
-        ],
-        liveQueueIdx: 0,
 
         init() {
             this.$watch('cart', (val) => {
                 localStorage.setItem('cup2eat_cart', JSON.stringify(val));
             });
-
-            // Start Live Ticker
-            setTimeout(() => this.triggerNextLiveAlert(), 3500);
-            setInterval(() => this.triggerNextLiveAlert(), 14000);
-        },
-
-        triggerNextLiveAlert() {
-            const item = this.liveOrdersQueue[this.liveQueueIdx];
-            this.liveToast = {
-                visible: true,
-                title: item.title,
-                subtitle: item.subtitle,
-                time: item.time,
-                icon: item.icon
-            };
-            this.liveQueueIdx = (this.liveQueueIdx + 1) % this.liveOrdersQueue.length;
-
-            // Hide after 5.5s
-            setTimeout(() => {
-                this.liveToast.visible = false;
-            }, 5500);
-        },
-
-        toggleSound() {
-            this.soundActive = window.SoundFX.toggleSound();
         },
 
         addToCart(item) {

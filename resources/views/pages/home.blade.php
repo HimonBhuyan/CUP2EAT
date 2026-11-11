@@ -6,7 +6,7 @@
 @section('content')
 
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-b from-forest-800 via-forest-900 to-forest-900 text-white pt-12 pb-24 lg:pt-20 lg:pb-32 overflow-hidden bg-grain">
+<section class="relative bg-gradient-to-b from-forest-800 via-forest-900 to-forest-900 text-white pt-20 sm:pt-28 lg:pt-32 pb-24 lg:pb-32 overflow-hidden bg-grain">
     <!-- Ambient glow rings -->
     <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
     <div class="absolute bottom-10 right-10 w-80 h-80 bg-gold-500/10 rounded-full blur-2xl pointer-events-none"></div>
@@ -122,8 +122,8 @@
                         <span>PAN-INDIA DISPATCH</span>
                     </div>
 
-                    <!-- Floating Badge: Eco Impact -->
-                    <div class="absolute -bottom-4 -right-4 bg-forest-700/90 backdrop-blur-md text-white text-xs px-4 py-2.5 rounded-xl shadow-xl border border-forest-500/60 flex items-center gap-2">
+                    <!-- Floating Badge: Eco Impact (positioned left to avoid fixed action collision) -->
+                    <div class="absolute -bottom-4 -left-3 bg-forest-700/95 backdrop-blur-md text-white text-xs px-4 py-2.5 rounded-xl shadow-xl border border-forest-500/60 flex items-center gap-2">
                         <div class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
                             ♻️
                         </div>

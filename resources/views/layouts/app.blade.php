@@ -89,7 +89,7 @@
 <body x-data="globalApp()" class="bg-[#FAF7F2] text-slate-800 font-sans antialiased selection:bg-gold-500 selection:text-white flex flex-col min-h-screen">
 
     <!-- Announcement Bar -->
-    <div class="bg-forest-900 text-gold-300 text-xs sm:text-sm py-2 px-4 border-b border-forest-700/60 sticky top-0 z-50">
+    <div class="bg-forest-900 text-gold-300 text-xs sm:text-sm py-2 px-4 border-b border-forest-700/60">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <div class="flex items-center gap-2 overflow-hidden text-ellipsis whitespace-nowrap">
                 <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-gold-500 text-forest-900 uppercase tracking-wider">Zero Waste</span>
@@ -110,17 +110,17 @@
         </div>
     </div>
 
-    <!-- Navigation Header -->
+    <!-- Navigation Header (Sticky Top-0) -->
     <header x-data="{ mobileMenuOpen: false, scrolled: false }"
-            @scroll.window="scrolled = (window.pageYOffset > 20)"
-            :class="scrolled ? 'bg-forest-900/95 backdrop-blur-md shadow-xl py-3 border-b border-forest-700/40' : 'bg-forest-800 py-4 border-b border-forest-700/50'"
-            class="sticky top-8 z-40 transition-all duration-300">
+            @scroll.window="scrolled = (window.pageYOffset > 10)"
+            :class="scrolled ? 'bg-forest-900/95 backdrop-blur-md shadow-2xl py-3 border-b border-forest-700/60' : 'bg-forest-850 py-4 border-b border-forest-700/50'"
+            class="sticky top-0 z-40 transition-all duration-300 bg-forest-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between">
 
                 <!-- Logo & Brand Name -->
                 <a href="{{ route('home') }}" class="flex items-center gap-3.5 group">
-                    <div class="relative w-12 h-12 rounded-full overflow-hidden p-0.5 bg-gradient-to-tr from-gold-500 via-forest-400 to-gold-400 shadow-md group-hover:scale-105 transition duration-300">
+                    <div class="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden p-0.5 bg-gradient-to-tr from-gold-500 via-forest-400 to-gold-400 shadow-md group-hover:scale-105 transition duration-300 shrink-0">
                         <img src="{{ asset('images/brand/logo.jpg') }}" alt="Cup2Eat Logo" class="w-full h-full object-cover rounded-full">
                     </div>
                     <div>
@@ -160,8 +160,8 @@
                     </a>
                 </nav>
 
-                <!-- Desktop CTA Buttons -->
-                <div class="hidden sm:flex items-center gap-2.5">
+                <!-- Desktop CTA Buttons (hidden below lg) -->
+                <div class="hidden lg:flex items-center gap-2.5">
                     <!-- Cart Drawer Trigger Button -->
                     <button @click="cartDrawerOpen = true"
                             type="button"
@@ -187,25 +187,11 @@
                     </a>
                 </div>
 
-                <!-- Mobile Header Actions -->
+                <!-- Mobile Header Actions (visible only below lg) -->
                 <div class="flex items-center gap-2 lg:hidden">
                     <button @click="cartDrawerOpen = true" type="button" class="relative p-2 text-gold-400 hover:text-white">
                         <i class="fa-solid fa-basket-shopping text-xl"></i>
                         <span x-show="cartCount > 0"
-                              x-text="cartCount"
-                              x-cloak
-                              class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-amber-500 text-forest-900 font-bold text-[10px] flex items-center justify-center">
-                        </span>
-                    </button>
-                    <a href="https://wa.me/919818192575" target="_blank" class="p-2 text-green-400 hover:text-white">
-                        <i class="fa-brands fa-whatsapp text-xl"></i>
-                    </a>
-                    <button @click="mobileMenuOpen = !mobileMenuOpen"
-                            type="button"
-                            class="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-forest-700 focus:outline-none">
-                        <i class="fa-solid" :class="mobileMenuOpen ? 'fa-xmark text-xl' : 'fa-bars text-xl'"></i>
-                    </button>
-                </div>
                               x-text="cartCount"
                               x-cloak
                               class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-amber-500 text-forest-900 font-bold text-[10px] flex items-center justify-center">
@@ -484,36 +470,6 @@
 
             </div>
         </div>
-    </div>
-
-    <!-- Live Social Proof Toast Ticker (Pulsing Dispatch Alert) -->
-    <div x-show="liveToast.visible"
-         x-cloak
-         x-transition:enter="transition ease-out duration-300"
-         x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:-translate-x-4"
-         x-transition:enter-end="opacity-100 translate-y-0 sm:translate-x-0"
-         x-transition:leave="transition ease-in duration-200"
-         x-transition:leave-start="opacity-100 scale-100"
-         x-transition:leave-end="opacity-0 scale-95"
-         class="fixed bottom-6 left-6 z-40 max-w-sm bg-forest-900/95 backdrop-blur-md text-white p-3.5 rounded-2xl border border-gold-500/40 shadow-2xl flex items-center gap-3.5">
-        <div class="relative w-10 h-10 rounded-xl bg-forest-800 border border-gold-500/30 flex items-center justify-center shrink-0 text-gold-400">
-            <i class="fa-solid" :class="liveToast.icon"></i>
-            <span class="absolute -top-1 -right-1 flex h-3 w-3">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-            </span>
-        </div>
-        <div class="flex-grow pr-2 min-w-0">
-            <div class="flex items-center gap-1.5 text-[10px] font-bold text-emerald-400 uppercase tracking-wider">
-                <span>● LIVE DISPATCH</span>
-                <span class="text-slate-400 font-normal" x-text="liveToast.time"></span>
-            </div>
-            <h5 class="text-xs font-bold text-white leading-tight truncate" x-text="liveToast.title"></h5>
-            <p class="text-[11px] text-slate-300 truncate" x-text="liveToast.subtitle"></p>
-        </div>
-        <button @click="liveToast.visible = false" class="text-slate-400 hover:text-white p-1 text-xs shrink-0">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
     </div>
 
     <!-- Premium Footer -->
