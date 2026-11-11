@@ -5,11 +5,19 @@
 
 @section('content')
 
-<!-- Hero Section -->
-<section class="relative bg-gradient-to-b from-forest-800 via-forest-900 to-forest-900 text-white pt-20 sm:pt-28 lg:pt-32 pb-24 lg:pb-32 overflow-hidden bg-grain">
-    <!-- Ambient glow rings -->
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute bottom-10 right-10 w-80 h-80 bg-gold-500/10 rounded-full blur-2xl pointer-events-none"></div>
+<!-- Hero Section (With Live Interactive Background) -->
+<section id="hero-section" class="relative bg-gradient-to-b from-forest-800 via-forest-900 to-forest-900 text-white pt-20 sm:pt-28 lg:pt-32 pb-24 lg:pb-32 overflow-hidden bg-grain">
+    
+    <!-- 1. Interactive Cursor Glow Layer (Follows Mouse in Real-Time) -->
+    <div class="absolute inset-0 pointer-events-none live-interactive-glow z-0"></div>
+
+    <!-- 2. Living Ambient Aurora Orbs (Smooth Floating & Breathing Light) -->
+    <div class="absolute -top-20 left-1/4 w-[520px] h-[520px] bg-emerald-500/15 rounded-full blur-3xl pointer-events-none animate-float-slow z-0"></div>
+    <div class="absolute top-1/3 -right-20 w-[480px] h-[480px] bg-gold-500/12 rounded-full blur-3xl pointer-events-none animate-float-reverse z-0"></div>
+    <div class="absolute -bottom-24 left-1/3 w-[550px] h-[550px] bg-amber-600/10 rounded-full blur-3xl pointer-events-none animate-pulse-glow z-0"></div>
+
+    <!-- 3. Live 60fps Golden Aroma & Eco Motes Particle Canvas -->
+    <canvas id="live-hero-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">

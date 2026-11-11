@@ -82,6 +82,34 @@
         .border-gold-glow {
             box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
         }
+
+        /* Live Ambient Aurora & Particle Keyframes */
+        @keyframes floatSlow {
+            0%, 100% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(40px, -35px) scale(1.12); }
+            66% { transform: translate(-30px, 25px) scale(0.94); }
+        }
+        @keyframes floatReverse {
+            0%, 100% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(-45px, 35px) scale(0.92); }
+            66% { transform: translate(25px, -30px) scale(1.10); }
+        }
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.20; transform: scale(1); }
+            50% { opacity: 0.45; transform: scale(1.18); }
+        }
+        .animate-float-slow {
+            animation: floatSlow 20s ease-in-out infinite;
+        }
+        .animate-float-reverse {
+            animation: floatReverse 24s ease-in-out infinite;
+        }
+        .animate-pulse-glow {
+            animation: pulseGlow 12s ease-in-out infinite;
+        }
+        .live-interactive-glow {
+            background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 40%), rgba(212, 175, 55, 0.14), rgba(20, 76, 55, 0.06) 45%, transparent 75%);
+        }
     </style>
 
     @stack('styles')

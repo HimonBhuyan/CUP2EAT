@@ -226,3 +226,118 @@ function globalApp() {
         }
     };
 }
+
+// Live Interactive Hero Particle & Steam Engine (60fps Canvas)
+window.initLiveHeroBackground = function() {
+    const canvas = document.getElementById('live-hero-canvas');
+    if (!canvas) return;
+    const hero = canvas.closest('section') || canvas.parentElement;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let width = canvas.width = hero.offsetWidth;
+    let height = canvas.height = hero.offsetHeight;
+
+    window.addEventListener('resize', () => {
+        if (!canvas || !hero) return;
+        width = canvas.width = hero.offsetWidth;
+        height = canvas.height = hero.offsetHeight;
+    });
+
+    // Track mouse on hero for live interactive lighting & particle repulsion
+    let mouse = { x: width * 0.5, y: height * 0.4, active: false };
+    hero.addEventListener('mousemove', (e) => {
+        const rect = hero.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+        mouse.active = true;
+        hero.style.setProperty('--mouse-x', `${(mouse.x / width) * 100}%`);
+        hero.style.setProperty('--mouse-y', `${(mouse.y / height) * 100}%`);
+    });
+    hero.addEventListener('mouseleave', () => {
+        mouse.active = false;
+        hero.style.setProperty('--mouse-x', '50%');
+        hero.style.setProperty('--mouse-y', '40%');
+    });
+
+    // Particle pool: golden aroma motes, emerald herbal particles, and soft steam bubbles
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 35 : 75;
+    const particles = [];
+    const colors = [
+        'rgba(247, 222, 139, ', // Gold light
+        'rgba(212, 175, 55, ',  // Gold rich
+        'rgba(52, 211, 153, ',  // Emerald mint
+        'rgba(16, 185, 129, ',  // Green
+        'rgba(244, 232, 220, '  // Steaming foam cream
+    ];
+
+    for (let i = 0; i < particleCount; i++) {
+        particles.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            radius: Math.random() * 2.2 + 0.8,
+            color: colors[Math.floor(Math.random() * colors.length)],
+            alpha: Math.random() * 0.55 + 0.15,
+            speedY: Math.random() * 0.65 + 0.2, // drifting upwards like aromatic steam
+            speedX: (Math.random() - 0.5) * 0.4,
+            pulseSpeed: Math.random() * 0.025 + 0.01,
+            pulse: Math.random() * Math.PI * 2,
+            isAroma: Math.random() > 0.65
+        });
+    }
+
+    function render() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+
+            // Upward drift like chai / coffee steam
+            p.y -= p.speedY;
+            p.x += p.speedX + Math.sin(p.pulse) * 0.3;
+            p.pulse += p.pulseSpeed;
+
+            // Interactive mouse repulsion/whirl
+            if (mouse.active) {
+                const dx = p.x - mouse.x;
+                const dy = p.y - mouse.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 130) {
+                    const force = (130 - dist) / 130;
+                    p.x += (dx / dist) * force * 2.2;
+                    p.y += (dy / dist) * force * 2.2;
+                }
+            }
+
+            // Wrap around bottom
+            if (p.y < -15) {
+                p.y = height + 10;
+                p.x = Math.random() * width;
+            }
+            if (p.x < -15) p.x = width + 10;
+            if (p.x > width + 15) p.x = -10;
+
+            // Draw glowing particle
+            const currentAlpha = p.alpha * (0.6 + 0.4 * Math.sin(p.pulse));
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+            ctx.fillStyle = p.color + currentAlpha + ')';
+            if (p.isAroma) {
+                ctx.shadowBlur = 8;
+                ctx.shadowColor = p.color + '0.6)';
+            } else {
+                ctx.shadowBlur = 0;
+            }
+            ctx.fill();
+        }
+
+        requestAnimationFrame(render);
+    }
+
+    render();
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    window.initLiveHeroBackground();
+});
