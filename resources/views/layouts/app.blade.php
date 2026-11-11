@@ -162,18 +162,10 @@
 
                 <!-- Desktop CTA Buttons -->
                 <div class="hidden sm:flex items-center gap-2.5">
-                    <!-- Audio FX Toggle -->
-                    <button @click="toggleSound()"
-                            type="button"
-                            :title="soundActive ? 'Sound Effects Enabled (Crunch & Pour)' : 'Sound Effects Muted'"
-                            class="relative p-2.5 rounded-xl border border-forest-700/80 bg-forest-900/60 text-gold-300 hover:text-white hover:bg-forest-700 transition flex items-center justify-center">
-                        <i class="fa-solid text-sm" :class="soundActive ? 'fa-volume-high text-gold-400' : 'fa-volume-xmark text-slate-400'"></i>
-                    </button>
-
                     <!-- Cart Drawer Trigger Button -->
                     <button @click="cartDrawerOpen = true"
                             type="button"
-                            class="relative px-3.5 py-2.5 rounded-xl border border-gold-500/40 bg-forest-900 hover:bg-forest-700/80 text-white transition flex items-center gap-2 group">
+                            class="relative px-3.5 py-2 rounded-xl border border-gold-500/40 bg-forest-900 hover:bg-forest-700/80 text-white transition flex items-center gap-2 group">
                         <i class="fa-solid fa-basket-shopping text-gold-400 group-hover:scale-110 transition"></i>
                         <span class="text-xs font-bold text-gold-300">Cart</span>
                         <span x-show="cartCount > 0"
@@ -191,18 +183,29 @@
                        target="_blank"
                        class="text-xs font-bold px-4 py-2.5 rounded-lg bg-gradient-to-r from-emerald-500 to-green-600 text-white shadow-md hover:from-emerald-600 hover:to-green-700 transition flex items-center gap-2">
                         <i class="fa-brands fa-whatsapp text-sm"></i>
-                        <span>WhatsApp</span>
+                        <span>WhatsApp Order</span>
                     </a>
                 </div>
 
                 <!-- Mobile Header Actions -->
                 <div class="flex items-center gap-2 lg:hidden">
-                    <button @click="toggleSound()" type="button" class="p-2 text-gold-400 hover:text-white">
-                        <i class="fa-solid text-base" :class="soundActive ? 'fa-volume-high' : 'fa-volume-xmark text-slate-400'"></i>
-                    </button>
                     <button @click="cartDrawerOpen = true" type="button" class="relative p-2 text-gold-400 hover:text-white">
                         <i class="fa-solid fa-basket-shopping text-xl"></i>
                         <span x-show="cartCount > 0"
+                              x-text="cartCount"
+                              x-cloak
+                              class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-amber-500 text-forest-900 font-bold text-[10px] flex items-center justify-center">
+                        </span>
+                    </button>
+                    <a href="https://wa.me/919818192575" target="_blank" class="p-2 text-green-400 hover:text-white">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                    </a>
+                    <button @click="mobileMenuOpen = !mobileMenuOpen"
+                            type="button"
+                            class="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-forest-700 focus:outline-none">
+                        <i class="fa-solid" :class="mobileMenuOpen ? 'fa-xmark text-xl' : 'fa-bars text-xl'"></i>
+                    </button>
+                </div>
                               x-text="cartCount"
                               x-cloak
                               class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-amber-500 text-forest-900 font-bold text-[10px] flex items-center justify-center">
