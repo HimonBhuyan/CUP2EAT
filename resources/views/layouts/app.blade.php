@@ -65,6 +65,9 @@
     <!-- Alpine.js for lightweight, reactive interactivity -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
 
+    <!-- CUP2EAT Procedural Audio, Particle & Cart State Engine -->
+    <script src="{{ asset('js/cup2eat.js') }}"></script>
+
     <style>
         [x-cloak] { display: none !important; }
         .bg-grain {
@@ -83,7 +86,7 @@
 
     @stack('styles')
 </head>
-<body class="bg-[#FAF7F2] text-slate-800 font-sans antialiased selection:bg-gold-500 selection:text-white flex flex-col min-h-screen">
+<body x-data="globalApp()" class="bg-[#FAF7F2] text-slate-800 font-sans antialiased selection:bg-gold-500 selection:text-white flex flex-col min-h-screen">
 
     <!-- Announcement Bar -->
     <div class="bg-forest-900 text-gold-300 text-xs sm:text-sm py-2 px-4 border-b border-forest-700/60 sticky top-0 z-50">
@@ -158,7 +161,28 @@
                 </nav>
 
                 <!-- Desktop CTA Buttons -->
-                <div class="hidden sm:flex items-center gap-3">
+                <div class="hidden sm:flex items-center gap-2.5">
+                    <!-- Audio FX Toggle -->
+                    <button @click="toggleSound()"
+                            type="button"
+                            :title="soundActive ? 'Sound Effects Enabled (Crunch & Pour)' : 'Sound Effects Muted'"
+                            class="relative p-2.5 rounded-xl border border-forest-700/80 bg-forest-900/60 text-gold-300 hover:text-white hover:bg-forest-700 transition flex items-center justify-center">
+                        <i class="fa-solid text-sm" :class="soundActive ? 'fa-volume-high text-gold-400' : 'fa-volume-xmark text-slate-400'"></i>
+                    </button>
+
+                    <!-- Cart Drawer Trigger Button -->
+                    <button @click="cartDrawerOpen = true"
+                            type="button"
+                            class="relative px-3.5 py-2.5 rounded-xl border border-gold-500/40 bg-forest-900 hover:bg-forest-700/80 text-white transition flex items-center gap-2 group">
+                        <i class="fa-solid fa-basket-shopping text-gold-400 group-hover:scale-110 transition"></i>
+                        <span class="text-xs font-bold text-gold-300">Cart</span>
+                        <span x-show="cartCount > 0"
+                              x-text="cartCount"
+                              x-cloak
+                              class="w-5 h-5 rounded-full bg-amber-500 text-forest-900 font-heading font-black text-[11px] flex items-center justify-center shadow-md animate-pulse">
+                        </span>
+                    </button>
+
                     <a href="{{ route('wholesale') }}#sample-request"
                        class="text-xs font-semibold px-3.5 py-2 rounded-lg text-gold-300 border border-gold-500/40 hover:bg-gold-500/10 transition">
                         <i class="fa-solid fa-box-open mr-1"></i> Sample Box
@@ -167,12 +191,23 @@
                        target="_blank"
                        class="text-xs font-bold px-4 py-2.5 rounded-lg bg-gradient-to-r from-emerald-500 to-green-600 text-white shadow-md hover:from-emerald-600 hover:to-green-700 transition flex items-center gap-2">
                         <i class="fa-brands fa-whatsapp text-sm"></i>
-                        <span>WhatsApp Order</span>
+                        <span>WhatsApp</span>
                     </a>
                 </div>
 
-                <!-- Mobile Menu Button -->
+                <!-- Mobile Header Actions -->
                 <div class="flex items-center gap-2 lg:hidden">
+                    <button @click="toggleSound()" type="button" class="p-2 text-gold-400 hover:text-white">
+                        <i class="fa-solid text-base" :class="soundActive ? 'fa-volume-high' : 'fa-volume-xmark text-slate-400'"></i>
+                    </button>
+                    <button @click="cartDrawerOpen = true" type="button" class="relative p-2 text-gold-400 hover:text-white">
+                        <i class="fa-solid fa-basket-shopping text-xl"></i>
+                        <span x-show="cartCount > 0"
+                              x-text="cartCount"
+                              x-cloak
+                              class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-amber-500 text-forest-900 font-bold text-[10px] flex items-center justify-center">
+                        </span>
+                    </button>
                     <a href="https://wa.me/919818192575" target="_blank" class="p-2 text-green-400 hover:text-white">
                         <i class="fa-brands fa-whatsapp text-xl"></i>
                     </a>
@@ -271,6 +306,212 @@
             </div>
         </a>
     </aside>
+
+    <!-- 2D Interactive Slide-Out Cart Drawer -->
+    <div x-show="cartDrawerOpen"
+         x-cloak
+         class="fixed inset-0 z-50 overflow-hidden"
+         aria-labelledby="slide-over-title"
+         role="dialog"
+         aria-modal="true">
+        
+        <!-- Backdrop -->
+        <div x-show="cartDrawerOpen"
+             x-transition:enter="ease-in-out duration-300"
+             x-transition:enter-start="opacity-0"
+             x-transition:enter-end="opacity-100"
+             x-transition:leave="ease-in-out duration-300"
+             x-transition:leave-start="opacity-100"
+             x-transition:leave-end="opacity-0"
+             @click="cartDrawerOpen = false"
+             class="fixed inset-0 bg-forest-950/70 backdrop-blur-sm transition-opacity"></div>
+
+        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+            <div x-show="cartDrawerOpen"
+                 x-transition:enter="transform transition ease-in-out duration-300"
+                 x-transition:enter-start="translate-x-full"
+                 x-transition:enter-end="translate-x-0"
+                 x-transition:leave="transform transition ease-in-out duration-300"
+                 x-transition:leave-start="translate-x-0"
+                 x-transition:leave-end="translate-x-full"
+                 class="w-screen max-w-md bg-white shadow-2xl flex flex-col">
+                
+                <!-- Drawer Header -->
+                <div class="px-6 py-5 bg-forest-900 text-white flex items-center justify-between border-b border-forest-800">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-forest-800 border border-gold-500/40 flex items-center justify-center text-gold-400">
+                            <i class="fa-solid fa-basket-shopping text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-heading font-black text-lg text-white" id="slide-over-title">Your Edible Order</h3>
+                            <p class="text-xs text-gold-300/80 font-medium">
+                                <span x-text="cartCount"></span> item(s) • <span x-text="cartCupsCount.toLocaleString()"></span> cups selected
+                            </p>
+                        </div>
+                    </div>
+                    <button @click="cartDrawerOpen = false"
+                            class="p-2 text-slate-300 hover:text-white rounded-lg hover:bg-forest-800 transition">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+
+                <!-- Free Shipping Progress Banner -->
+                <div class="bg-gradient-to-r from-emerald-600 to-forest-600 px-6 py-2.5 text-white text-xs font-semibold flex items-center justify-between shadow-inner">
+                    <span class="flex items-center gap-1.5">
+                        <i class="fa-solid fa-truck-fast text-gold-300"></i>
+                        <span>100% Free Pan-India Delivery Included</span>
+                    </span>
+                    <span class="text-[10px] bg-white/20 px-2 py-0.5 rounded font-bold uppercase tracking-wider">Zero Extra Fee</span>
+                </div>
+
+                <!-- Drawer Body (Items List) -->
+                <div class="flex-grow overflow-y-auto px-6 py-4 space-y-4 divide-y divide-slate-100">
+                    <template x-if="cart.length === 0">
+                        <div class="py-16 text-center space-y-4">
+                            <div class="w-16 h-16 rounded-2xl bg-amber-50 text-amber-600 mx-auto flex items-center justify-center text-3xl">
+                                <i class="fa-solid fa-cookie-bite"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-lg text-forest-900">Your cart is empty!</h4>
+                                <p class="text-xs text-slate-500 max-w-xs mx-auto mt-1">
+                                    Taste the future of eco-friendly dining. Pick a signature flavor or a wholesale cafe box.
+                                </p>
+                            </div>
+                            <a href="{{ route('menu') }}"
+                               @click="cartDrawerOpen = false"
+                               class="inline-block px-5 py-2.5 rounded-xl bg-forest-900 text-gold-400 font-heading font-bold text-xs uppercase tracking-wider hover:bg-forest-800 transition">
+                                Browse Flavor Menu
+                            </a>
+                        </div>
+                    </template>
+
+                    <template x-for="item in cart" :key="item.id">
+                        <div class="pt-4 first:pt-0 flex items-start gap-4">
+                            <!-- Thumbnail -->
+                            <img :src="item.image" :alt="item.name" class="w-16 h-16 rounded-xl object-cover border border-slate-200 bg-slate-50 shrink-0">
+                            
+                            <div class="flex-grow min-w-0">
+                                <div class="flex items-start justify-between gap-2">
+                                    <div>
+                                        <h4 class="font-heading font-bold text-sm text-forest-900 leading-tight truncate" x-text="item.name"></h4>
+                                        <p class="text-[11px] text-slate-500 mt-0.5" x-text="item.piece_count + ' • ' + (item.flavor || '')"></p>
+                                    </div>
+                                    <button @click="removeItem(item.id)" class="text-slate-400 hover:text-red-500 p-1 transition text-xs">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                </div>
+
+                                <div class="mt-3 flex items-center justify-between">
+                                    <!-- Stepper -->
+                                    <div class="flex items-center border border-slate-200 rounded-lg bg-slate-50 overflow-hidden">
+                                        <button @click="updateQty(item.id, -1)"
+                                                type="button"
+                                                class="w-7 h-7 flex items-center justify-center text-slate-600 hover:bg-slate-200 font-bold transition text-xs">
+                                            -
+                                        </button>
+                                        <span class="w-8 text-center text-xs font-bold text-forest-900" x-text="item.qty"></span>
+                                        <button @click="updateQty(item.id, 1)"
+                                                type="button"
+                                                class="w-7 h-7 flex items-center justify-center text-slate-600 hover:bg-slate-200 font-bold transition text-xs">
+                                            +
+                                        </button>
+                                    </div>
+
+                                    <!-- Price -->
+                                    <div class="text-right">
+                                        <span class="font-heading font-black text-sm text-forest-900" x-text="'₹' + (item.price * item.qty).toLocaleString()"></span>
+                                        <div class="text-[10px] text-slate-400" x-text="'@ ₹' + item.price.toLocaleString() + '/pack'"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+                <!-- Drawer Footer & WhatsApp Checkout -->
+                <div x-show="cart.length > 0" class="p-6 bg-slate-50 border-t border-slate-200 space-y-4">
+                    
+                    <!-- Environmental Impact Badge -->
+                    <div class="bg-emerald-50 border border-emerald-200 p-2.5 rounded-xl flex items-center gap-2 text-xs text-emerald-800">
+                        <i class="fa-solid fa-leaf text-emerald-600"></i>
+                        <span>You are replacing <strong x-text="cartCupsCount.toLocaleString() + ' plastic cups'"></strong> with pure edible crunch!</span>
+                    </div>
+
+                    <!-- Destination Input -->
+                    <div class="space-y-2">
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-600">Delivery City / State (Pan-India):</label>
+                        <input type="text"
+                               x-model="deliveryCity"
+                               placeholder="e.g. Mumbai, Ahmedabad, Gurugram, Bhubaneswar..."
+                               class="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 focus:outline-none focus:border-forest-600 bg-white">
+                    </div>
+
+                    <!-- Cost Breakdown -->
+                    <div class="space-y-1.5 pt-2 border-t border-slate-200 text-xs text-slate-600">
+                        <div class="flex justify-between">
+                            <span>Subtotal</span>
+                            <span class="font-bold text-slate-800" x-text="'₹' + cartTotal.toLocaleString()"></span>
+                        </div>
+                        <div class="flex justify-between text-emerald-700">
+                            <span>Doorstep Delivery (All India)</span>
+                            <span class="font-bold">FREE</span>
+                        </div>
+                        <div class="flex justify-between items-baseline pt-2 border-t border-slate-200 text-base">
+                            <span class="font-heading font-bold text-forest-900">Total Amount</span>
+                            <span class="font-heading font-black text-xl text-forest-900" x-text="'₹' + cartTotal.toLocaleString()"></span>
+                        </div>
+                    </div>
+
+                    <!-- Checkout Button -->
+                    <button @click="checkoutWhatsApp()"
+                            type="button"
+                            class="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-heading font-extrabold text-sm shadow-xl flex items-center justify-center gap-2 transition hover:scale-[1.01]">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Proceed to WhatsApp Checkout</span>
+                    </button>
+
+                    <div class="flex items-center justify-between text-[11px] text-slate-500">
+                        <button @click="clearCart()" type="button" class="text-slate-400 hover:text-red-500 transition">
+                            Clear Cart
+                        </button>
+                        <span>FSSAI Certified • 100% Safe Packaging</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Live Social Proof Toast Ticker (Pulsing Dispatch Alert) -->
+    <div x-show="liveToast.visible"
+         x-cloak
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:-translate-x-4"
+         x-transition:enter-end="opacity-100 translate-y-0 sm:translate-x-0"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100 scale-100"
+         x-transition:leave-end="opacity-0 scale-95"
+         class="fixed bottom-6 left-6 z-40 max-w-sm bg-forest-900/95 backdrop-blur-md text-white p-3.5 rounded-2xl border border-gold-500/40 shadow-2xl flex items-center gap-3.5">
+        <div class="relative w-10 h-10 rounded-xl bg-forest-800 border border-gold-500/30 flex items-center justify-center shrink-0 text-gold-400">
+            <i class="fa-solid" :class="liveToast.icon"></i>
+            <span class="absolute -top-1 -right-1 flex h-3 w-3">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+            </span>
+        </div>
+        <div class="flex-grow pr-2 min-w-0">
+            <div class="flex items-center gap-1.5 text-[10px] font-bold text-emerald-400 uppercase tracking-wider">
+                <span>● LIVE DISPATCH</span>
+                <span class="text-slate-400 font-normal" x-text="liveToast.time"></span>
+            </div>
+            <h5 class="text-xs font-bold text-white leading-tight truncate" x-text="liveToast.title"></h5>
+            <p class="text-[11px] text-slate-300 truncate" x-text="liveToast.subtitle"></p>
+        </div>
+        <button @click="liveToast.visible = false" class="text-slate-400 hover:text-white p-1 text-xs shrink-0">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
 
     <!-- Premium Footer -->
     <footer class="bg-forest-900 text-slate-300 border-t border-forest-800 pt-16 pb-12 mt-20 relative overflow-hidden">

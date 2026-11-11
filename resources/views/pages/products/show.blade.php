@@ -146,19 +146,27 @@
 
                 <!-- Order CTAs -->
                 <div class="space-y-3 pt-2">
+                    <!-- Quick Add to Slide-out Cart Button -->
+                    <button type="button"
+                            @click="addToCart({ id: '{{ $product->id }}', name: '{{ addslashes($product->name) }}', price: {{ $product->price }}, piece_count: '{{ $product->piece_count }}', size: '{{ $product->size }}', flavor: '{{ $product->flavor }}', image: '{{ asset($product->image) }}', qty: qty })"
+                            class="w-full py-3.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-500 hover:from-gold-400 hover:to-amber-400 text-forest-950 font-heading font-black text-sm flex items-center justify-center gap-2 shadow-xl hover:scale-[1.01] transition">
+                        <i class="fa-solid fa-basket-shopping text-base"></i>
+                        <span>Add <span x-text="qty"></span> Pack(s) to Cart (<span x-text="'₹' + total.toLocaleString()"></span>)</span>
+                    </button>
+
                     <a :href="waUrl" target="_blank"
-                       class="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-heading font-extrabold text-base shadow-xl flex items-center justify-center gap-2.5 transition">
-                        <i class="fa-brands fa-whatsapp text-xl"></i>
-                        <span>Order Now on WhatsApp (<span x-text="'₹' + total.toLocaleString()"></span>)</span>
+                       class="w-full py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-heading font-bold text-sm shadow-md flex items-center justify-center gap-2.5 transition">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Direct WhatsApp Order</span>
                     </a>
 
                     <div class="flex items-center gap-3">
                         <a href="{{ route('order') }}"
-                           class="w-full py-3 rounded-xl bg-forest-900 hover:bg-forest-800 text-gold-300 font-bold text-xs uppercase tracking-wider text-center border border-forest-700 transition">
-                            <i class="fa-solid fa-cart-flatbed mr-1.5"></i> Add to Custom Quote Builder
+                           class="w-full py-2.5 rounded-xl bg-forest-900 hover:bg-forest-800 text-gold-300 font-bold text-xs uppercase tracking-wider text-center border border-forest-700 transition">
+                            <i class="fa-solid fa-cart-flatbed mr-1.5"></i> Custom Quote Builder
                         </a>
                         <a href="{{ route('wholesale') }}#sample-request"
-                           class="w-full py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs uppercase tracking-wider text-center transition">
+                           class="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs uppercase tracking-wider text-center transition">
                             <i class="fa-solid fa-box-open mr-1.5"></i> Request Sample Box
                         </a>
                     </div>

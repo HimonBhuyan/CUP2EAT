@@ -148,9 +148,16 @@
                                     <span class="text-[10px] text-emerald-600 font-semibold">Includes Delivery</span>
                                 </div>
 
-                                <div class="flex items-center gap-2">
+                                <div class="flex items-center gap-1.5">
+                                    <button type="button"
+                                            @click="addToCart({ id: '{{ $prod->id }}', name: '{{ addslashes($prod->name) }}', price: {{ $prod->price }}, piece_count: '{{ $prod->piece_count }}', size: '{{ $prod->size }}', flavor: '{{ $prod->flavor }}', image: '{{ asset($prod->image) }}', qty: 1 })"
+                                            class="px-3 py-2 rounded-xl text-xs font-bold text-forest-900 bg-gold-400 hover:bg-gold-500 shadow-sm flex items-center gap-1 transition">
+                                        <i class="fa-solid fa-plus text-[10px]"></i>
+                                        <span>Cart</span>
+                                    </button>
+                                    
                                     <a href="{{ route('product.show', $prod->slug) }}"
-                                       class="px-3 py-2 rounded-xl text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 transition">
+                                       class="px-2.5 py-2 rounded-xl text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 transition">
                                         View
                                     </a>
                                     
@@ -159,9 +166,9 @@
                                         $waLink = "https://wa.me/919818192575?text=" . urlencode($waMsg);
                                     @endphp
                                     <a href="{{ $waLink }}" target="_blank"
-                                       class="px-3.5 py-2 rounded-xl text-xs font-bold bg-green-600 hover:bg-green-700 text-white shadow-sm flex items-center gap-1.5 transition">
+                                       class="p-2 rounded-xl text-xs font-bold bg-green-600 hover:bg-green-700 text-white shadow-sm flex items-center justify-center transition"
+                                       title="Quick Order via WhatsApp">
                                         <i class="fa-brands fa-whatsapp text-sm"></i>
-                                        <span>Order</span>
                                     </a>
                                 </div>
                             </div>
